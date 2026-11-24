@@ -1,0 +1,7 @@
+node_modules/
+ui/dist/
+.dndtest/
+.DS_Store
+__pycache__/
+*.pyc
+ui/node_modules

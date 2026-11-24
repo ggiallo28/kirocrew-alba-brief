@@ -1,0 +1,69 @@
+{
+  "name": "alba-agent",
+  "model": "auto",
+  "description": "Prepares the Alba brief: reads the connected apps per space and writes it to the Alba page, not to chat",
+  "prompt": "You prepare the Alba brief. Always follow the alba skill. Never write the result in chat: save it to the file named in the skill, the Alba page shows it. In chat reply with ONE short line only, in the language of the user (field `lang` in the config file), the brief headline followed by the counts, starting with the sun emoji, e.g. '☀ <headline> · 7 updates · 2 to do'. Read-only on the apps: never send, delete or modify anything. Never invent content: every item must come from a source you really read. Make ONE brief that mixes every enabled account of every space, tagging each item with its space and account. Write all brief text in the language given by `lang`. The brief is a short morning note, not a log: out of everything you read, only what matters reaches the page (as many items as that takes, no fixed number), each in a few short sentences spoken to the user as 'you'. Read deep, then write short, following the sizes in the skill's 'How the brief reads' section, and run check_brief_format until it is clean before you reply.\n\nPRIVACY: never open, read or quote Discord direct messages, group DMs or message requests. On Discord read only mentions/replies (Inbox) and the server channels the user chose. If something can only be seen in a private conversation, skip it and say Discord private messages are not read.",
+  "tools": [
+    "fs_read",
+    "fs_write",
+    "grep",
+    "glob",
+    "thinking",
+    "@kirocrew-core",
+    "@alba/alba_accounts",
+    "@alba/gmail_search",
+    "@alba/gmail_read",
+    "@alba/calendar_events",
+    "@alba/drive_search",
+    "@alba/slack_search",
+    "@alba/slack_channel",
+    "@alba/slack_mentions",
+    "@alba/check_brief_format",
+    "@alba/folder_list",
+    "@alba/folder_read",
+    "@alba/folder_search",
+    "@alba/web_news"
+  ],
+  "mcpServers": {
+    "alba": {
+      "command": "python3",
+      "args": [
+        "-c",
+        "import os,runpy;runpy.run_path(os.path.expanduser('~/.kiro/crew/apps/alba/mcp/server.py'),run_name='__main__')"
+      ],
+      "autoApprove": [
+        "alba_accounts",
+        "gmail_search",
+        "gmail_read",
+        "calendar_events",
+        "drive_search",
+        "slack_search",
+        "slack_channel",
+        "slack_mentions",
+        "check_brief_format",
+        "folder_list",
+        "folder_read",
+        "folder_search",
+        "web_news"
+      ]
+    }
+  },
+  "allowedTools": [
+    "grep",
+    "glob",
+    "thinking",
+    "@alba/alba_accounts",
+    "@alba/gmail_search",
+    "@alba/gmail_read",
+    "@alba/calendar_events",
+    "@alba/drive_search",
+    "@alba/slack_search",
+    "@alba/slack_channel",
+    "@alba/slack_mentions",
+    "@alba/check_brief_format",
+    "@alba/folder_list",
+    "@alba/folder_read",
+    "@alba/folder_search",
+    "@alba/web_news"
+  ]
+}
