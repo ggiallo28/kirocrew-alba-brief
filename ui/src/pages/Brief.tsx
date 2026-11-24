@@ -132,7 +132,7 @@ export default function Oggi() {
   const letsDo = () => {
     const prompt = brief?.push?.prompt || brief?.push?.title || ''
     try {
-      openChat({ agent: 'alba-bot', message: prompt, autoSend: true })
+      openChat({ agent: 'alba-bot', message: prompt, autoSend: false })
     } catch {
       notify(t.chatFail)
     }

@@ -2127,7 +2127,7 @@ function Kr() {
     var B, U;
     const i = ((B = x == null ? void 0 : x.push) == null ? void 0 : B.prompt) || ((U = x == null ? void 0 : x.push) == null ? void 0 : U.title) || "";
     try {
-      _({ agent: "alba-bot", message: i, autoSend: !0 });
+      _({ agent: "alba-bot", message: i, autoSend: !1 });
     } catch {
       y(N.chatFail);
     }
@@ -4672,7 +4672,7 @@ function hi() {
               /* @__PURE__ */ t("b", { children: "Alba" }),
               /* @__PURE__ */ r("small", { children: [
                 "v",
-                "1.48.3"
+                "1.49.0"
               ] }),
               /* @__PURE__ */ t("span", { className: "bs", children: e.bannerSub }),
               /* @__PURE__ */ r("button", { className: "tabbtn refresh" + (K ? " spin" : ""), disabled: K, onClick: Ft, children: [

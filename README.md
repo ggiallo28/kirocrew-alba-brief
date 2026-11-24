@@ -47,7 +47,7 @@ More sources keep being added over time.
 
 ## Your privacy first
 
-Alba **only ever reads**. It never sends an email, never posts a message, never changes an event, never touches a document. Your credentials always stay safe on your Mac, in the Keychain. Nobody sees them, nobody reads them, not even Alba herself. The assistant only ever works on already-clean snapshots of your data, never on the originals.
+Alba **only ever reads**. It never sends an email, never changes an event, never touches a document. The one exception is the optional Slackbot recap, where Alba asks Slackbot for a summary of your channels in the browser, and it only types that request. Your credentials stay in your system's secret store (Keychain on macOS, Secret Service on Linux, Credential Manager on Windows), in a private file only your user can read when none is available. The assistant never sees them: it works on snapshots of your data, never on the originals. Text that comes from outside, such as mail, web pages or files, is treated as data and never as instructions, and keys or tokens that appear in local transcripts are hidden before the assistant reads them. When you press the button on the work suggestion of the day, the request is placed in the chat for you to read and send.
 
 ## Getting started
 

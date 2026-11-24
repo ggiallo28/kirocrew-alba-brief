@@ -47,7 +47,7 @@ TOOLS = [
      "inputSchema": {"type": "object", "properties": {"query": {"type": "string", "description": "Short search query, two to five words, in the language the news should be in"}, "days": {"type": "integer", "description": "How far back (default 2, up to 14)"}, "max": {"type": "integer", "description": "Max items per watch (default 8)"}, "account": ACC}},
      "annotations": {"readOnlyHint": True}},
     {"name": "check_brief_format", "description": "Deterministic check on the brief and to-dos you just wrote to config.json: the sizes the skill asks for (headline, push, today's to-dos, update titles and bodies, number of updates), a headline that reads like a list, a caption that lists sources, self-narration phrases ('I did not open...', 'may be partial'), tags longer than two words. Call this right after writing `brief` and `tasks`, before replying in chat; it never rewrites your text; it only moves an item filed under the wrong profile to the right one, and reports.",
-     "inputSchema": {"type": "object", "properties": {}}, "annotations": {"readOnlyHint": True}},
+     "inputSchema": {"type": "object", "properties": {}}, "annotations": {"readOnlyHint": False, "idempotentHint": True, "destructiveHint": False}},
 ]
 
 

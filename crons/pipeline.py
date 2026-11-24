@@ -1,6 +1,6 @@
 """Alba pipeline: the only scheduled job of the app. Plain code, no LLM of its own.
 
-Every few minutes (weekdays 08:00-20:00) it looks at what is due and runs the steps in order:
+Every five minutes (cron in app.json) it looks at what is due; the brief itself runs on the days and from the time the user chose, never after 22:00. It looks at what is due and runs the steps in order:
 
     pre   : health (sign-in check), linkedin (weekly stats, browser agent)
     main  : brief (agent)

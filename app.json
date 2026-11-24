@@ -1,6 +1,6 @@
 {
   "name": "alba",
-  "version": "1.48.3",
+  "version": "1.49.0",
   "displayName": "Alba",
   "description": "A daily brief from your mail, calendar, chat, issue trackers, local folders and the web, on one page you can read in a minute. One block per space and several accounts per app, a chat companion (alba-bot) that remembers things for you and answers about today's and past briefs, and thumbs on each update so the next brief learns what you care about. Read-only on the apps. Follows the Kiro Crew language.",
   "author": "ggiallo28",
@@ -104,13 +104,13 @@
     ]
   },
   "ui": {
-    "entry": "dist/alba-1.48.3.mjs",
+    "entry": "dist/alba-1.49.0.mjs",
     "pages": [
       {
         "route": "/apps/alba",
         "label": "Alba",
         "icon": "Sunrise",
-        "entryPoint": "dist/alba-1.48.3.mjs"
+        "entryPoint": "dist/alba-1.49.0.mjs"
       }
     ]
   },

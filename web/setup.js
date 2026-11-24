@@ -202,7 +202,7 @@
       api('/setup/api/save', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ accountId: a.id, values: values }) }).then(function (r) {
         btn.disabled = false
         Object.keys(ins).forEach(function (k) { if (ins[k].type === 'password') ins[k].value = '' })
-        if (r.ok && r.j.ok) { msg.className = 'msg ok'; msg.textContent = T.ok + (r.j.who ? ' · ' + r.j.who : '') + (r.j.count != null ? ' · ' + r.j.count : ''); h.chip.className = 'chip ok'; h.chip.textContent = T.connected }
+        if (r.ok && r.j.ok) { msg.className = 'msg ok'; msg.textContent = T.ok + (r.j.who ? ' · ' + r.j.who : '') + (r.j.count != null ? ' · ' + r.j.count : '') + (r.j.wide && T.ghWide ? ' · ' + T.ghWide : ''); h.chip.className = 'chip ok'; h.chip.textContent = T.connected }
         else { msg.className = 'msg bad'; msg.textContent = errText(r.j) }
       }).catch(function () { btn.disabled = false; msg.className = 'msg bad'; msg.textContent = T.bad })
     })

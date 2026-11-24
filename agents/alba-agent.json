@@ -24,6 +24,19 @@
     "@alba/folder_search",
     "@alba/web_news"
   ],
+  "toolsSettings": {
+    "fs_read": {
+      "allowedPaths": [
+        "~/.kiro/crew/apps/alba/data/**",
+        "~/.kiro/crew/apps/alba/skills/**"
+      ]
+    },
+    "fs_write": {
+      "allowedPaths": [
+        "~/.kiro/crew/apps/alba/data/**"
+      ]
+    }
+  },
   "mcpServers": {
     "alba": {
       "command": "python3",

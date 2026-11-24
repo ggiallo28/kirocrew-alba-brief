@@ -132,6 +132,15 @@ def trello_snapshot(secret: str) -> list[dict]:
 
 
 # ---------------------------------------------------------------- GitHub
+def github_wide(token: str) -> bool:
+    """True when the classic token carries more than Alba needs (it only reads notifications and public PRs)."""
+    try:
+        _, hdr = _gh(token, "/user")
+    except Exception:
+        return False
+    return any(s in (hdr.get("X-OAuth-Scopes") or "").replace(" ", "").split(",") for s in ("repo", "admin:org", "delete_repo", "write:org"))
+
+
 def _gh(token: str, path: str, params: dict | None = None):
     h = {"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28", "User-Agent": "alba-brief"}
     q = "?" + urllib.parse.urlencode(params) if params else ""
