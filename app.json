@@ -1,10 +1,17 @@
 {
   "name": "alba",
-  "version": "1.48.2",
+  "version": "1.48.3",
   "displayName": "Alba",
-  "description": "Daily brief from Gmail, Slack, Calendar, Drive and other connected apps, one block per space, several accounts per app, with a chat companion (alba-bot) that remembers things for you and answers about today's and past briefs. Read-only on the apps. Follows the Kiro Crew language.",
+  "description": "A daily brief from your mail, calendar, chat, issue trackers, local folders and the web, on one page you can read in a minute. One block per space and several accounts per app, a chat companion (alba-bot) that remembers things for you and answers about today's and past briefs, and thumbs on each update so the next brief learns what you care about. Read-only on the apps. Follows the Kiro Crew language.",
   "author": "ggiallo28",
   "iconPath": "assets/icon.png",
+  "heroImage": "assets/hero-store.jpg",
+  "heroImageDetail": "assets/hero-detail.jpg",
+  "screenshots": [
+    "assets/screenshots/brief.jpg",
+    "assets/screenshots/todos-and-updates.jpg",
+    "assets/screenshots/sources.jpg"
+  ],
   "agents": [
     "agents/alba-agent.json",
     "agents/alba-bot.json"
@@ -97,13 +104,13 @@
     ]
   },
   "ui": {
-    "entry": "dist/alba-1.48.2.mjs",
+    "entry": "dist/alba-1.48.3.mjs",
     "pages": [
       {
         "route": "/apps/alba",
         "label": "Alba",
         "icon": "Sunrise",
-        "entryPoint": "dist/alba-1.48.2.mjs"
+        "entryPoint": "dist/alba-1.48.3.mjs"
       }
     ]
   },

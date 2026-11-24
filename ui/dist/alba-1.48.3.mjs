@@ -4672,7 +4672,7 @@ function hi() {
               /* @__PURE__ */ t("b", { children: "Alba" }),
               /* @__PURE__ */ r("small", { children: [
                 "v",
-                "1.48.2"
+                "1.48.3"
               ] }),
               /* @__PURE__ */ t("span", { className: "bs", children: e.bannerSub }),
               /* @__PURE__ */ r("button", { className: "tabbtn refresh" + (K ? " spin" : ""), disabled: K, onClick: Ft, children: [
