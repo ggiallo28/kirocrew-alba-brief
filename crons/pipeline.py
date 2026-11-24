@@ -102,6 +102,48 @@ def _linkedin_newest_day() -> str:
     return best
 
 
+def _store():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("alba_cfgstore", os.path.join(os.path.dirname(BASE), "backend", "cfgstore.py"))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+_NUDGE = {
+    "en": ("Alba is waiting", "The brief has been running for a while. A tool may be waiting for your approval in Kiro Crew."),
+    "it": ("Alba è in attesa", "Il brief è in corso da un po'. Uno strumento potrebbe aspettare la tua approvazione in Kiro Crew."),
+    "es": ("Alba está esperando", "El resumen lleva un rato en marcha. Puede que una herramienta espere tu aprobación en Kiro Crew."),
+    "fr": ("Alba attend", "Le résumé est en cours depuis un moment. Un outil attend peut-être votre approbation dans Kiro Crew."),
+    "de": ("Alba wartet", "Die Zusammenfassung läuft schon länger. Vielleicht wartet ein Werkzeug in Kiro Crew auf deine Freigabe."),
+    "pt": ("Alba está à espera", "O resumo está em curso há algum tempo. Uma ferramenta pode estar à espera da tua aprovação no Kiro Crew."),
+}
+NUDGE_AFTER = 8 * 60   # seconds a step may run before the user is told; a normal brief takes 4 to 8 minutes
+
+
+def _nudge(cfg: dict) -> None:
+    """A desktop notification (macOS or Linux): a run that stays quiet is often a tool asking for approval nobody sees."""
+    import shutil
+    import subprocess
+    title, text = _NUDGE.get(str(cfg.get("lang") or "en").split("-")[0], _NUDGE["en"])
+    try:
+        if shutil.which("osascript"):
+            esc = lambda s: s.replace("\\", "\\\\").replace('"', '\\"')
+            subprocess.run(["osascript", "-e", f'display notification "{esc(text)}" with title "{esc(title)}"'], timeout=10, capture_output=True)
+        elif shutil.which("notify-send"):
+            subprocess.run(["notify-send", title, text], timeout=10, capture_output=True)
+    except Exception:
+        pass
+
+
+def _safety():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("alba_safety", os.path.join(os.path.dirname(BASE), "backend", "safety.py"))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
 def _marker(step_id: str, cfg: dict) -> str:
     """Value that changes when the step's agent has produced its output."""
     if step_id == "brief":
@@ -257,9 +299,20 @@ def run(ctx):
         sid = step["id"]
         s = steps.setdefault(sid, {})
         if s.get("status") == "running":
+            if sid == "brief":
+                try:   # the agent normally has it merged through check_brief_format; if it did not call it, merge here
+                    _store().commit_output(BASE)
+                    cfg = _json(os.path.join(BASE, "config.json"), cfg)
+                except Exception:
+                    pass
             if _marker(sid, cfg) != s.get("before"):
                 s.update(status="ok", endedAt=time.time(), day=today)
                 notes.append(f"{sid}: finito")
+            elif time.time() - float(s.get("startedAt", 0)) > NUDGE_AFTER and not s.get("nudged") and not dry:
+                s["nudged"] = True   # once per run
+                _nudge(cfg)
+                _save(st)
+                return
             elif time.time() - float(s.get("startedAt", 0)) > TIMEOUT:
                 s.update(status="failed", endedAt=time.time(), error="timeout")
                 notes.append(f"{sid}: timeout")
@@ -293,6 +346,18 @@ def run(ctx):
         # agent step: own session, then wait for it
         if sid == "brief":
             _fresh_sources()   # collect from the sources first, then let the agent read the snapshots
+            try:   # the one folder the brief agent may write to; the LinkedIn history moved in there
+                out = _store().ensure_out(BASE)
+                old = os.path.join(BASE, "linkedin-history.json")
+                if os.path.exists(old) and not os.path.exists(os.path.join(out, "linkedin-history.json")):
+                    import shutil
+                    shutil.copyfile(old, os.path.join(out, "linkedin-history.json"))
+            except Exception:
+                pass
+            try:   # snapshots written by the browser steps are cleaned too: secrets and one-time codes never reach the brief agent
+                _safety().redact_sources(BASE)
+            except Exception:
+                pass
             try:
                 _module("skill_build.py").run(ctx)   # keep the skill trimmed to the apps actually enabled right now
             except Exception:
@@ -304,6 +369,7 @@ def run(ctx):
             s.update(status="failed", startedAt=time.time(), day=today, error=f"{type(e).__name__}: {str(e)[:120]}")
             notes.append(f"{sid}: non avviato")
             continue
+        s.pop("nudged", None)
         s.update(status="running", startedAt=time.time(), before=_marker(sid, cfg), error="",
                  attempts=(int(s.get("attempts", 0)) + 1) if s.get("day") == today else 1, day=today)
         _save(st)

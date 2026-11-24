@@ -10,7 +10,7 @@ export const isPage = (m: string) => m === 'page' || m === 'pagina aperta'
 export type Health = { status: 'ok' | 'signin' | 'error'; checkedAt: string; detail?: string }
 export type Account = { id: string; label: string; space: string; method: Method; enabled: boolean; verifiedAt?: string; patterns?: { include: string[]; exclude: string[] }; web?: { mode: 'free' | 'sites'; sites: string[]; block: string[] }; orgFilter?: { mode: 'include' | 'exclude'; orgs: string[] }; companyPage?: string; companyScope?: 'profile' | 'both' | 'company' }
 export type Todo = { title: string; body?: string; source?: string; url?: string; space?: string; account?: string; done?: boolean }
-export type Task = { id: string; title: string; tag?: string; hot?: boolean; body?: string; source?: string; url?: string; space?: string; account?: string; firstSeen: string; status: 'open' | 'done' | 'dismissed'; doneAt?: string; doneBy?: 'user' | 'source' }
+export type Task = { id: string; title: string; tag?: string; hot?: boolean; body?: string; source?: string; url?: string; space?: string; account?: string; firstSeen: string; status: 'open' | 'done' | 'dismissed'; doneAt?: string; archived?: boolean; doneBy?: 'user' | 'source' }
 export type Reminder = { id: string; text: string; createdAt: string; due?: string; status: 'pending' | 'delivered'; deliveredAt?: string }
 export type Update = { title: string; tag?: string; hot?: boolean; body?: string; source?: string; url?: string; space?: string; account?: string }
 export type Brief = {
@@ -495,7 +495,8 @@ const CSS = `
 .mb .age{font-family:var(--font-body,inherit);font-size:11px;color:var(--muted);margin-left:8px;font-weight:400}
 .mb .age.late{color:var(--danger,#ef4444);font-weight:600}
 .mb .rowbtns{display:flex;gap:10px;margin-top:8px;font-family:var(--font-body,inherit)}
-.mb .lnk{background:none;border:0;padding:0;color:var(--muted);font-size:12px;cursor:pointer;text-decoration:underline}
+.mb .lnk{background:none;border:0;padding:0;color:var(--muted);font-size:12px;cursor:pointer;text-decoration:underline;display:inline-flex;align-items:center;gap:5px}
+.mb .lnk svg{flex:none}
 .mb .lnk:hover{color:var(--text-strong)}
 .mb .parked{opacity:.65}
 .mb .fold summary{cursor:pointer;color:var(--muted);font-family:var(--font-body,inherit);font-size:13px;margin:6px 0 18px}

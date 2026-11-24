@@ -18,6 +18,14 @@ No generic summaries, not "you have 14 unread emails". Alba reads what actually 
 - **LinkedIn stats on your own schedule** (weekly by default, or as often as you set it), and a Slack recap that genuinely covers every channel, not just the noisiest ones.
 - **Your apps, connected once**, all gathered in one place to look at, every morning.
 
+## See it in action
+
+<p align="center">
+  <img src="assets/how-to-use-alba.gif" alt="A walkthrough of Alba. Connecting Gmail to a profile, creating a new profile, ticking and archiving to-dos, and asking the hen to remember something" width="100%">
+</p>
+
+The walkthrough connects Gmail to a profile, follows the steps on the setup page, creates a second profile, goes through the to-dos of each one, archives a finished task and asks the hen to remember something, which hatches an egg once it is saved. Everything in it is invented sample data.
+
 ## Supported apps
 
 <table width="100%">

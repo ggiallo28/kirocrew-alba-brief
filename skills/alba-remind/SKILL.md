@@ -16,8 +16,7 @@ The user asks Alba to remember something. Alba does NOT act now: it brings the r
 Never invent a day. A past date: ask.
 
 ## Where to write (mandatory)
-`~/.kiro/crew/apps/alba/data/config.json`. Read it, add ONE entry to the top-level array `reminders` (create it if missing), rewrite the whole file keeping every other key. Valid JSON.
-`{ "id": "short-random-id", "text": "...", "createdAt": "<now ISO>", "due": "YYYY-MM-DD", "status": "pending" }` — leave `due` out only for "the next day's brief".
+Call the `reminder_add` tool: `text` (what to remember, in the user's words) and `due` (`YYYY-MM-DD`; leave it out only for "the next day's brief"). The tool saves it safely. Never edit `config.json` yourself.
 
 ## Reply
 One short sentence in the user's language saying WHEN it comes back.

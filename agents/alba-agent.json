@@ -33,7 +33,8 @@
     },
     "fs_write": {
       "allowedPaths": [
-        "~/.kiro/crew/apps/alba/data/**"
+        "~/.kiro/crew/apps/alba/data/out/**",
+        "~/.kiro/crew/apps/alba/data/sources/**"
       ]
     }
   },

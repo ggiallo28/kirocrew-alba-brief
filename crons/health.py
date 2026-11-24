@@ -17,6 +17,14 @@ from urllib.parse import quote
 from kiro_crew.cron_script import Done
 
 CFG = os.path.expanduser("~/.kiro/crew/apps/alba/data/config.json")
+
+
+def _store():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("alba_cfgstore", os.path.expanduser("~/.kiro/crew/apps/alba/backend/cfgstore.py"))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
 LOCATION_MAX_AGE_DAYS = 14  # the machine rarely moves: no need to look this up on every run
 PAGES = {
     "gmail": "https://mail.google.com/mail/?authuser={e}",
@@ -88,9 +96,21 @@ def _location_update(cur: dict) -> dict | None:
 def _check(ctx, app: str, label: str) -> tuple[str, str]:
     url = PAGES[app].format(e=quote(label, safe="@"))
     try:
-        nav = _browser(ctx, "navigate", url=url)
-        _browser(ctx, "wait_for", load=True)
-        snap = _browser(ctx, "snapshot")
+        for attempt in range(3):   # the browser sometimes answers "No target with given id": its tab was closed meanwhile. Navigating again opens a fresh one
+            nav = _browser(ctx, "navigate", url=url)
+            _browser(ctx, "wait_for", load=True)
+            snap = _browser(ctx, "snapshot")
+            if not (str(nav).startswith("Error (browser_error)") or str(snap).startswith("Error (browser_error)")):
+                break
+            time.sleep(3)
+        else:
+            return "error", "il browser di Crew non ha risposto (scheda non trovata)"
+        for _ in range(2):   # a page that is still drawing returns an almost empty outline: look again before calling it empty
+            if len(str(snap)) > 200:
+                break
+            time.sleep(4)
+            _browser(ctx, "wait_for", load=True)
+            snap = _browser(ctx, "snapshot")
     except Exception as exc:  # browser missing, blocked, timeout…
         return "error", re.sub(r"\s+", " ", str(exc))[:120]
     text = f"{nav}\n{snap}"
@@ -111,7 +131,14 @@ def _check(ctx, app: str, label: str) -> tuple[str, str]:
         return "signin", ""
     if app == "discord" and not re.search(r"server|servidor|serveur|direct messages|messaggi diretti|inbox|posta in arrivo|add a server|aggiungi un server", snap, re.I):
         return "error", "interfaccia non caricata: nessuna lista dei server"
-    return ("ok", "") if len(snap) > 200 else ("error", "pagina vuota")
+    if len(str(snap)) > 200:
+        return "ok", ""
+    # single-page apps (LinkedIn, Teams...) can hand back an almost empty outline while the page is fine: the title of the page that
+    # loaded, without a sign-in wording, is enough to tell the session is alive
+    tm = re.search(r'"title":\s*"([^"]{3,})"', str(nav)) or re.search(r'(?im)^\s*(?:title|page title)\s*[:=]\s*(.{3,})$', str(snap))
+    if tm and not SIGNIN.search(tm.group(1)) and not re.search(r"about:blank|error|not found|just a moment|access denied", tm.group(1), re.I):
+        return "ok", ""
+    return "error", "pagina vuota"
 
 
 def run(ctx):
@@ -152,17 +179,20 @@ def run(ctx):
         if not results:
             raise Done("nessun account da verificare")
         raise Done("dry: " + json.dumps(results))
-    # rilegge subito prima di scrivere: cambia solo `health` e, raramente, `location`
-    with open(CFG, encoding="utf-8") as f:
-        cur = json.load(f)
-    new_loc = _location_update(cur)
-    if not results and not new_loc:
+    # modifica solo `health` e, raramente, `location`, sopra la versione corrente del file, sotto lock
+    store = _store()
+    changed = {"n": 0}
+
+    def apply(cur):
+        new_loc = _location_update(cur)
+        if not results and not new_loc:
+            return
+        cur["health"] = {**(cur.get("health") or {}), **results}
+        if new_loc:
+            cur["location"] = new_loc
+        changed["n"] = 1
+
+    store.update(CFG, apply)
+    if not changed["n"]:
         raise Done("nessun account da verificare")
-    cur["health"] = {**(cur.get("health") or {}), **results}
-    if new_loc:
-        cur["location"] = new_loc
-    tmp = CFG + ".tmp"
-    with open(tmp, "w", encoding="utf-8") as f:
-        json.dump(cur, f, ensure_ascii=False, indent=2)
-    os.replace(tmp, CFG)
     raise Done("verificati: " + ", ".join(f"{k}={v['status']}" for k, v in results.items()))

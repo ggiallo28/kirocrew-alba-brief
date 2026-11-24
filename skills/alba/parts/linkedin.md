@@ -1,6 +1,6 @@
 ## LinkedIn insights (weekly)
 If `data/sources/*/linkedin-*.json` exists, its `fetchedAt` is within the last 8 days, and you have not already covered that fetch in a previous brief, add ONE update (`source: "linkedin"`, `tag: "LinkedIn"`) made of:
-- The one or two numbers that moved most against the previous week (read `data/linkedin-history.json`) and the post that did best, with a short, honest reason you can see in the numbers.
+- The one or two numbers that moved most against the previous week (read `data/out/linkedin-history.json`) and the post that did best, with a short, honest reason you can see in the numbers.
 - The single most useful suggestion for next week (opening line, format, timing or topic) - never one you already gave.
 - It is an update like the others: same size, 2-4 short sentences.
 - If items are `unavailable`, add one `unread` line naming the page that could not be read and why, not a sentence in the update.

@@ -1,4 +1,4 @@
-import { Check, Globe, RotateCcw, Pause, Pencil, Play, Plus, Plug, RefreshCw, Sunrise, Trash2 } from 'lucide-react'
+import { Check, Globe, RotateCcw, Pause, Pencil, Play, Plus, Plug, RefreshCw, Sunrise, Trash2, X } from 'lucide-react'
 import { useAppApi, useChatLauncher } from '@kirocrew/app-sdk'
 import { useEffect, useRef, useState } from 'react'
 import { focusDefault } from '../focus'
@@ -24,6 +24,8 @@ export default function Connessioni() {
   const [secrets, setSecrets] = useState<Record<string, boolean>>({})
   const [secFor, setSecFor] = useState<Record<string, boolean>>({})
   const [setupUrl, setSetupUrl] = useState<string | null>(null)
+  // the link to the setup page is only a fallback for a blocked pop-up: it goes away by itself
+  useEffect(() => { if (!setupUrl) return; const id = setTimeout(() => setSetupUrl(null), 20000); return () => clearTimeout(id) }, [setupUrl])
   const [setupCopied, setSetupCopied] = useState(false)
   const [secVal, setSecVal] = useState<Record<string, string>>({})
   const [gForm, setGForm] = useState({ id: '', secret: '' })
@@ -289,6 +291,7 @@ export default function Connessioni() {
           <span style={{ display: 'flex', gap: 6, flex: 'none' }}>
             <a className="talk" href={setupUrl} target="_blank" rel="noopener noreferrer">{t.setupOpen}</a>
             <button className="talk" type="button" onClick={async () => { try { await navigator.clipboard.writeText(setupUrl) } catch { /* appunti non disponibili */ } setSetupCopied(true) }}>{setupCopied ? t.setupCopied : t.setupCopy}</button>
+            <button className="talk" type="button" onClick={() => setSetupUrl(null)} aria-label={t.close} title={t.close}><X size={13} /></button>
           </span>
         </div>
       ) : null}
@@ -552,7 +555,7 @@ export default function Connessioni() {
                       })()}
                   </div> : null}
                   <div className="accinfo">
-                    <span className="nm" title={a.label}>{a.label.includes('@') ? a.label.split('@')[0] : a.label}</span>
+                    <span className="nm" title={a.label}>{a.label}</span>
                     {space === ALL ? (
                       <select value={a.space} onChange={(e) => patch(key, a.id, { space: e.target.value })}>
                         {cfg.spaces.map((s) => <option key={s}>{s}</option>)}

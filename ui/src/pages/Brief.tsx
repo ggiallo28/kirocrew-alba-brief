@@ -1,6 +1,6 @@
 import { useAppApi, useChatLauncher, useNotify } from '@kirocrew/app-sdk'
 import { useEffect, useRef, useState } from 'react'
-import { BellRing, Check, Info, MessageCircle, Sunrise, ThumbsDown, ThumbsUp } from 'lucide-react'
+import { Archive, BellRing, Check, Info, MessageCircle, Sunrise, ThumbsDown, ThumbsUp } from 'lucide-react'
 import { ALL, APPS, heroImageFor, spaceColor, spacesOf, useConfig, useFilter, useLang, type Config, type Task } from '../shared'
 
 // Uovo: il pulsante "Ci penso io" è un uovo di Alba (stessa famiglia della gallina e dei promemoria)
@@ -98,23 +98,25 @@ export default function Oggi() {
   const today = ymd()
   // Fonte unica dei task: cfg.tasks. Se manca (vecchi riepiloghi) si usano i todos del brief, tutti aperti oggi.
   const baseTasks: Task[] = cfg.tasks ?? (brief?.todos ?? []).map((x, i) => ({ id: 'legacy-' + i, title: x.title, body: x.body, source: x.source, space: x.space, account: x.account, firstSeen: today, status: x.done ? ('done' as const) : ('open' as const), doneAt: x.done ? today : undefined, doneBy: 'user' as const }))
-  const tasks: Task[] = baseTasks.map((x) => (decided[x.id] ? { ...x, status: decided[x.id].status as Task['status'], doneAt: decided[x.id].doneAt, doneBy: 'user' as const } : x))
+  const tasks: Task[] = baseTasks.map((x) => (decided[x.id] ? { ...x, status: decided[x.id].status as Task['status'], doneAt: decided[x.id].doneAt, doneBy: 'user' as const, archived: !!decided[x.id].archived } : x))
   const inFilter = (x: Task) => show(x)
   const open = tasks.filter((x) => x.status === 'open' && inFilter(x))
   const active = open.filter((x) => ageOf(x, today) < PARK_DAYS).sort((a, b) => ageOf(b, today) - ageOf(a, today))
   const parked = open.filter((x) => ageOf(x, today) >= PARK_DAYS)
-  const doneToday = tasks.filter((x) => x.status === 'done' && x.doneAt === today && inFilter(x))
-  const archive = tasks.filter((x) => x.status !== 'open' && x.doneAt !== today && inFilter(x) && (Date.parse(today) - Date.parse(x.doneAt ?? today)) / DAY <= KEEP_DAYS)
+  const doneToday = tasks.filter((x) => x.status === 'done' && !x.archived && x.doneAt === today && inFilter(x))
+  const archive = tasks.filter((x) => x.status !== 'open' && !x.archived && x.doneAt !== today && inFilter(x) && (Date.parse(today) - Date.parse(x.doneAt ?? today)) / DAY <= KEEP_DAYS)
   const updates = (brief?.updates ?? []).filter(show)
 
   const setTask = (x: Task, patch: Partial<Task>) => {
     const next = { ...x, ...patch }
-    setDecided((d) => { const n = { ...d }; if (next.status === 'open') delete n[x.id]; else n[x.id] = { status: next.status, doneAt: next.doneAt }; return n })
-    api.post('/apps/alba/api/task-state', { id: x.id, title: x.title, source: x.source, account: x.account, url: x.url, status: next.status, doneAt: next.doneAt }).catch(() => notify(t.saveFail))
+    setDecided((d) => { const n = { ...d }; if (next.status === 'open') delete n[x.id]; else n[x.id] = { status: next.status, doneAt: next.doneAt, archived: !!next.archived }; return n })
+    api.post('/apps/alba/api/task-state', { id: x.id, title: x.title, source: x.source, account: x.account, url: x.url, status: next.status, doneAt: next.doneAt, archived: !!next.archived }).catch(() => notify(t.saveFail))
   }
+  // archived: gone from the page for good, but the task stays closed so it is never proposed again
+  const archiveTask = (x: Task) => setTask(x, { archived: true })
   const complete = (x: Task) => setTask(x, { status: 'done', doneAt: today, doneBy: 'user' })
   const dismissTask = (x: Task) => setTask(x, { status: 'dismissed', doneAt: today, doneBy: 'user' })
-  const reopen = (x: Task) => setTask(x, { status: 'open', doneAt: undefined, doneBy: undefined })
+  const reopen = (x: Task) => setTask(x, { status: 'open', doneAt: undefined, doneBy: undefined, archived: false })
 
   // Chat dedicata su una voce: parte una conversazione nuova con il contesto già scritto.
   const chatAbout = (title: string, body?: string, source?: string, account?: string) => {
@@ -285,7 +287,7 @@ export default function Oggi() {
                   </h3>
                   {x.body ? <p>{x.body}</p> : null}
                   <Tags cfg={cfg} space={x.space} account={x.account} />
-                  {!done ? <div className="rowbtns"><button className="lnk" onClick={() => dismissTask(x)}>{t.dismiss}</button></div> : null}
+                  {!done ? <div className="rowbtns"><button className="lnk" onClick={() => dismissTask(x)}>{t.dismiss}</button></div> : <div className="rowbtns"><button className="lnk" onClick={() => archiveTask(x)}><Archive size={11} /> {t.archiveTask}</button></div>}
                 </div>
               </div>
             )
@@ -309,12 +311,14 @@ export default function Oggi() {
           {archive.length ? (
             <details className="fold">
               <summary>{t.completed(archive.length)}</summary>
+              <div className="rowbtns" style={{ margin: '0 0 14px' }}><button className="lnk" onClick={() => archive.forEach(archiveTask)}><Archive size={11} /> {t.archiveAll}</button></div>
               {archive.map((x) => (
                 <div key={x.id} className="todo done">
                   <button className="circle on" onClick={() => reopen(x)} aria-label={t.reopen}><Check size={14} /></button>
                   <div>
                     <h3>{x.title}{x.tag ? <em className={x.hot ? 'hot' : ''}>{x.tag}</em> : null}<Src k={x.source} url={x.url} account={x.account} />{x.doneBy === 'source' ? <span className="age">{t.viaSource}</span> : null}</h3>
                     <Tags cfg={cfg} space={x.space} account={x.account} />
+                    <div className="rowbtns"><button className="lnk" onClick={() => archiveTask(x)}><Archive size={11} /> {t.archiveTask}</button></div>
                   </div>
                 </div>
               ))}

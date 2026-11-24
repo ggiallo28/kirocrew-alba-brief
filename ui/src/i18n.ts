@@ -15,7 +15,7 @@ type Dict = {
   emptyTitle: (s: string) => string; emptyBody: string; loading: string; emptyTab: string
   moreIcons: string; iconSearch: string; close: string; focusTitle: string; focusNone: string; focusReset: string; aboutTitle: string; aboutHint: string; aboutPh: string; showUnused: (n: number) => string; hideUnused: string; folderPh: string; heroPre: string; secPush: string; secTodos: string; secUpdates: string; go: string
   footMade: string; footApps: string; unread: string; done: string
-  freqTitle: string; freqEvery: string; freqWeekly: string; freqOff: string; freqHint: string; avStatus: string; schedTitle: string; schedHint: string; schedTime: string; regen: string; regenOn: string; regenErr: string; late: string; ageDays: (n: number) => string; parked: string; completed: (n: number) => string; dismiss: string; reopen: string; viaSource: string; noTasks: string; chooseIcon: string; renameSpace: string; manageSpaces: string; pickSpaceHint: string; chooseColor: string; openIn: (n: string) => string; dragHint: string; remToChat: string; cluck: string; teasers: string[]; teaseLate: (n: number) => string; teasePending: (n: number) => string; teaseFresh: string; chatPlaceholder: string; chatUnavailable: string; chatBack: string; chatOpenCrew: string; goLines: [string, string]; chatAbout: string; chatHint: string; remAsk: string; remAskPh: string; remHint: string; remTalk: string; remTitle: string; remHello: string; remPlaceholder: string; remNext: string; remPick: string; remSaved: (l: string) => string; remNextLabel: string; remOnDay: (d: string) => string; remPending: string; remDelete: string; remSince: (d: string) => string; profile: string; deleteSpace: string; ghOrgTitle: string; ghOrgExclude: string; ghOrgInclude: string; ghOrgPh: string; ghOrgHint: string; liCoTitle: string; liCoPh: string; liCoHint: string; liCoProfile: string; liCoBoth: string; liCoOnly: string; folderName: string; defaultSpaces: string[]
+  freqTitle: string; freqEvery: string; freqWeekly: string; freqOff: string; freqHint: string; avStatus: string; schedTitle: string; schedHint: string; schedTime: string; regen: string; regenOn: string; regenErr: string; late: string; ageDays: (n: number) => string; parked: string; completed: (n: number) => string; dismiss: string; archiveTask: string; archiveAll: string; reopen: string; viaSource: string; noTasks: string; chooseIcon: string; renameSpace: string; manageSpaces: string; pickSpaceHint: string; chooseColor: string; openIn: (n: string) => string; dragHint: string; remToChat: string; cluck: string; teasers: string[]; teaseLate: (n: number) => string; teasePending: (n: number) => string; teaseFresh: string; chatPlaceholder: string; chatUnavailable: string; chatBack: string; chatOpenCrew: string; goLines: [string, string]; chatAbout: string; chatHint: string; remAsk: string; remAskPh: string; remHint: string; remTalk: string; remTitle: string; remHello: string; remPlaceholder: string; remNext: string; remPick: string; remSaved: (l: string) => string; remNextLabel: string; remOnDay: (d: string) => string; remPending: string; remDelete: string; remSince: (d: string) => string; profile: string; deleteSpace: string; ghOrgTitle: string; ghOrgExclude: string; ghOrgInclude: string; ghOrgPh: string; ghOrgHint: string; liCoTitle: string; liCoPh: string; liCoHint: string; liCoProfile: string; liCoBoth: string; liCoOnly: string; folderName: string; defaultSpaces: string[]
   bannerSub: string; voteUp: string; voteDown: string; goDone: string; patTitle: string; patInclude: string; patExclude: string; patHint: string; webTitle: string; webFree: string; webSites: string; webSitesPh: string; webBlockPh: string; webHint: string; webPh: string; bannerDays: string; bannerAccounts: string; bannerApps: string; bannerSpaces: string
   connTitle: string; connSub: (n: number) => string; all: string; newSpace: string; delSpace: string
   addTo: (s: string) => string; createFirst: string; pause: string; resume: string; remove: string; add: string
@@ -39,7 +39,7 @@ const D: Record<Lang, Dict> = {
     freqTitle: 'Quando leggere {app}', freqEvery: 'Ogni brief', freqWeekly: 'Solo nei giorni scelti', freqOff: 'Mai', freqHint: 'Nei giorni non scelti la fonte resta fuori dal brief.', avStatus: 'Stato',
     schedTitle: 'Quando parte il brief', schedHint: "Parte da quest'ora nei giorni scelti. Se il computer è spento, parte appena lo accendi.", schedTime: 'Ora',
     regen: 'Aggiorna brief', regenOn: 'In corso…', regenErr: 'Non riuscito: riprova',
-    late: 'in ritardo', ageDays: (n) => (n === 1 ? 'da ieri' : `da ${n} giorni`), parked: 'Da riguardare', completed: (n) => `Completate (${n})`, dismiss: 'Non serve più', reopen: 'Riapri', viaSource: 'risolta dalla fonte', noTasks: 'Niente in sospeso.',
+    late: 'in ritardo', ageDays: (n) => (n === 1 ? 'da ieri' : `da ${n} giorni`), parked: 'Da riguardare', completed: (n) => `Completate (${n})`, dismiss: 'Non serve più', archiveTask: 'Archivia', archiveAll: 'Archivia tutte', reopen: 'Riapri', viaSource: 'risolta dalla fonte', noTasks: 'Niente in sospeso.',
     chooseIcon: "Scegli icona",
     renameSpace: "Rinomina",
     manageSpaces: "Gestisci spazi",
@@ -132,7 +132,7 @@ const D: Record<Lang, Dict> = {
     freqTitle: 'When to read {app}', freqEvery: 'Every brief', freqWeekly: 'Only on chosen days', freqOff: 'Never', freqHint: 'On the other days the source is left out of the brief.', avStatus: 'Status',
     schedTitle: 'When the brief runs', schedHint: 'It starts from this time on the chosen days. If the computer is off, it starts as soon as you turn it on.', schedTime: 'Time',
     regen: 'Refresh brief', regenOn: 'Working…', regenErr: 'Failed: retry',
-    late: 'overdue', ageDays: (n) => (n === 1 ? 'since yesterday' : `for ${n} days`), parked: 'To revisit', completed: (n) => `Completed (${n})`, dismiss: 'No longer needed', reopen: 'Reopen', viaSource: 'resolved at the source', noTasks: 'Nothing pending.',
+    late: 'overdue', ageDays: (n) => (n === 1 ? 'since yesterday' : `for ${n} days`), parked: 'To revisit', completed: (n) => `Completed (${n})`, dismiss: 'No longer needed', archiveTask: 'Archive', archiveAll: 'Archive all', reopen: 'Reopen', viaSource: 'resolved at the source', noTasks: 'Nothing pending.',
     chooseIcon: "Choose icon",
     renameSpace: "Rename",
     manageSpaces: "Manage spaces",
@@ -225,7 +225,7 @@ const D: Record<Lang, Dict> = {
     freqTitle: 'Cuándo leer {app}', freqEvery: 'Cada brief', freqWeekly: 'Solo los días elegidos', freqOff: 'Nunca', freqHint: 'Los demás días la fuente queda fuera del brief.', avStatus: 'Estado',
     schedTitle: 'Cuándo sale el brief', schedHint: 'Empieza a esta hora en los días elegidos. Si el equipo está apagado, empieza en cuanto lo enciendas.', schedTime: 'Hora',
     regen: 'Actualizar brief', regenOn: 'En curso…', regenErr: 'Falló: reintentar',
-    late: 'atrasada', ageDays: (n) => (n === 1 ? 'desde ayer' : `desde hace ${n} días`), parked: 'Por revisar', completed: (n) => `Completadas (${n})`, dismiss: 'Ya no hace falta', reopen: 'Reabrir', viaSource: 'resuelta en la fuente', noTasks: 'Nada pendiente.',
+    late: 'atrasada', ageDays: (n) => (n === 1 ? 'desde ayer' : `desde hace ${n} días`), parked: 'Por revisar', completed: (n) => `Completadas (${n})`, dismiss: 'Ya no hace falta', archiveTask: 'Archivar', archiveAll: 'Archivar todas', reopen: 'Reabrir', viaSource: 'resuelta en la fuente', noTasks: 'Nada pendiente.',
     chooseIcon: "Elegir icono",
     renameSpace: "Renombrar",
     manageSpaces: "Gestionar espacios",
@@ -318,7 +318,7 @@ const D: Record<Lang, Dict> = {
     freqTitle: 'Quand lire {app}', freqEvery: 'À chaque brief', freqWeekly: 'Seulement les jours choisis', freqOff: 'Jamais', freqHint: 'Les autres jours la source reste hors du brief.', avStatus: 'État',
     schedTitle: 'Quand part le brief', schedHint: 'Il démarre à cette heure les jours choisis. Si l’ordinateur est éteint, il démarre dès l’allumage.', schedTime: 'Heure',
     regen: 'Actualiser le brief', regenOn: 'En cours…', regenErr: 'Échec : réessayer',
-    late: 'en retard', ageDays: (n) => (n === 1 ? 'depuis hier' : `depuis ${n} jours`), parked: 'À revoir', completed: (n) => `Terminées (${n})`, dismiss: 'Plus nécessaire', reopen: 'Rouvrir', viaSource: 'résolue à la source', noTasks: 'Rien en attente.',
+    late: 'en retard', ageDays: (n) => (n === 1 ? 'depuis hier' : `depuis ${n} jours`), parked: 'À revoir', completed: (n) => `Terminées (${n})`, dismiss: 'Plus nécessaire', archiveTask: 'Archiver', archiveAll: 'Tout archiver', reopen: 'Rouvrir', viaSource: 'résolue à la source', noTasks: 'Rien en attente.',
     chooseIcon: "Choisir l'icône",
     renameSpace: "Renommer",
     manageSpaces: "Gérer les espaces",
@@ -411,7 +411,7 @@ const D: Record<Lang, Dict> = {
     freqTitle: 'Wann {app} gelesen wird', freqEvery: 'Jeder Brief', freqWeekly: 'Nur an gewählten Tagen', freqOff: 'Nie', freqHint: 'An den anderen Tagen bleibt die Quelle außen vor.', avStatus: 'Status',
     schedTitle: 'Wann der Brief startet', schedHint: 'Er startet ab dieser Uhrzeit an den gewählten Tagen. Ist der Rechner aus, startet er beim Einschalten.', schedTime: 'Uhrzeit',
     regen: 'Brief aktualisieren', regenOn: 'Läuft…', regenErr: 'Fehlgeschlagen: erneut',
-    late: 'überfällig', ageDays: (n) => (n === 1 ? 'seit gestern' : `seit ${n} Tagen`), parked: 'Zur Wiedervorlage', completed: (n) => `Erledigt (${n})`, dismiss: 'Nicht mehr nötig', reopen: 'Wieder öffnen', viaSource: 'an der Quelle erledigt', noTasks: 'Nichts offen.',
+    late: 'überfällig', ageDays: (n) => (n === 1 ? 'seit gestern' : `seit ${n} Tagen`), parked: 'Zur Wiedervorlage', completed: (n) => `Erledigt (${n})`, dismiss: 'Nicht mehr nötig', archiveTask: 'Archivieren', archiveAll: 'Alle archivieren', reopen: 'Wieder öffnen', viaSource: 'an der Quelle erledigt', noTasks: 'Nichts offen.',
     chooseIcon: "Symbol wählen",
     renameSpace: "Umbenennen",
     manageSpaces: "Bereiche verwalten",
@@ -504,7 +504,7 @@ const D: Record<Lang, Dict> = {
     freqTitle: 'Quando ler {app}', freqEvery: 'Cada brief', freqWeekly: 'Só nos dias escolhidos', freqOff: 'Nunca', freqHint: 'Nos outros dias a fonte fica fora do brief.', avStatus: 'Estado',
     schedTitle: 'Quando sai o brief', schedHint: 'Começa a esta hora nos dias escolhidos. Se o computador estiver desligado, começa assim que o ligar.', schedTime: 'Hora',
     regen: 'Atualizar brief', regenOn: 'Em curso…', regenErr: 'Falhou: tentar de novo',
-    late: 'atrasada', ageDays: (n) => (n === 1 ? 'desde ontem' : `há ${n} dias`), parked: 'A rever', completed: (n) => `Concluídas (${n})`, dismiss: 'Já não é preciso', reopen: 'Reabrir', viaSource: 'resolvida na origem', noTasks: 'Nada pendente.',
+    late: 'atrasada', ageDays: (n) => (n === 1 ? 'desde ontem' : `há ${n} dias`), parked: 'A rever', completed: (n) => `Concluídas (${n})`, dismiss: 'Já não é preciso', archiveTask: 'Arquivar', archiveAll: 'Arquivar todas', reopen: 'Reabrir', viaSource: 'resolvida na origem', noTasks: 'Nada pendente.',
     chooseIcon: "Escolher ícone",
     renameSpace: "Renomear",
     manageSpaces: "Gerir espaços",
