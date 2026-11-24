@@ -1,6 +1,6 @@
 {
   "name": "alba",
-  "version": "1.48.1",
+  "version": "1.48.2",
   "displayName": "Alba",
   "description": "Daily brief from Gmail, Slack, Calendar, Drive and other connected apps, one block per space, several accounts per app, with a chat companion (alba-bot) that remembers things for you and answers about today's and past briefs. Read-only on the apps. Follows the Kiro Crew language.",
   "author": "ggiallo28",
@@ -97,13 +97,13 @@
     ]
   },
   "ui": {
-    "entry": "dist/alba-1.48.1.mjs",
+    "entry": "dist/alba-1.48.2.mjs",
     "pages": [
       {
         "route": "/apps/alba",
         "label": "Alba",
         "icon": "Sunrise",
-        "entryPoint": "dist/alba-1.48.1.mjs"
+        "entryPoint": "dist/alba-1.48.2.mjs"
       }
     ]
   },

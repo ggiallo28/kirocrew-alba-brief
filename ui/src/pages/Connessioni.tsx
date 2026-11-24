@@ -448,7 +448,7 @@ export default function Connessioni() {
             <div className={'card' + (list.length ? '' : ' empty') + (list.some((x) => x.id === avOpen || x.id === freqFor || x.id === orgFor || x.id === coFor || x.id === setFor) ? ' up' : '')} key={key} style={{ '--i': n } as any}>
               <div className="head">
                 <div className="tile" style={{ background: c + '26', color: c }}><Icon size={22} /></div>
-                <div><b>{name}</b><span>{hint}</span>
+                <div><b>{key === 'folder' ? t.folderName : name}</b><span>{hint}</span>
                 </div>
                 <span className="count">{list.length}</span>
                 {space !== ALL && list.length === 0 ? <button type="button" className="ib collapseapp" title={t.hideUnused} aria-label={t.hideUnused} onClick={() => collapseEmpty(expandedKey(key))}>×</button> : null}

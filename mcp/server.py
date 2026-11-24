@@ -56,7 +56,7 @@ def call_backend(tool, args):
         with open(os.path.join(DATA, ".mcp-token"), encoding="utf-8") as f:
             tok = f.read().strip()
     except OSError:
-        return {"error": "Alba non è avviata (token non trovato). Apri Alba in Kiro Crew."}
+        return {"error": "Alba is not running (token not found). Open Alba in Kiro Crew."}
     name = "accounts" if tool == "alba_accounts" else tool
     req = urllib.request.Request(f"http://127.0.0.1:{PORT}/mcp/call", data=json.dumps({"tool": name, "args": args or {}}).encode(), method="POST",
                                  headers={"Content-Type": "application/json", "X-Alba-Mcp": tok})
@@ -66,7 +66,7 @@ def call_backend(tool, args):
     except urllib.error.HTTPError as e:
         return {"error": f"backend HTTP {e.code}"}
     except Exception as e:
-        return {"error": "backend non raggiungibile: " + type(e).__name__}
+        return {"error": "Alba backend not reachable: " + type(e).__name__}
 
 
 def send(obj):

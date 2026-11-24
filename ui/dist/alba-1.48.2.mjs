@@ -1,19 +1,19 @@
 import { jsx as t, jsxs as r, Fragment as Xe } from "react/jsx-runtime";
-import yo, { MessageCircle as ua, Layers as Wn, FileText as ko, Globe as $n, Folder as en, Sparkles as Un, GitBranch as wo, Car as Co, Bike as So, Moon as zo, Sun as Ao, Cloud as No, Shield as To, Palette as Mo, Wrench as Fo, Leaf as Io, Lightbulb as Eo, Dumbbell as Lo, Gamepad2 as Po, Building2 as qo, Wallet as Do, Coffee as Bo, Plane as Oo, Music as Ho, Camera as Ro, ShoppingCart as jo, GraduationCap as _o, Book as Go, Rocket as Wo, Code as $o, Star as Uo, Heart as Vo, Users as Yo, User as Ko, Home as Qo, Briefcase as Zo, Pipette as Jo, Sunrise as Ta, Info as Xo, Check as _a, BellRing as er, ThumbsUp as tr, ThumbsDown as ar, Plug as Ga, RotateCcw as Za, Trash2 as wn, Plus as Ma, RefreshCw as nr, Pause as or, Play as rr, Bell as Cn, ExternalLink as Wa, X as ir, CornerDownLeft as sr, Pencil as lr } from "lucide-react";
+import wo, { MessageCircle as ua, Layers as Wn, FileText as Co, Globe as $n, Folder as tn, Sparkles as Un, GitBranch as So, Car as zo, Bike as Ao, Moon as No, Sun as To, Cloud as Mo, Shield as Fo, Palette as Io, Wrench as Eo, Leaf as Lo, Lightbulb as Po, Dumbbell as qo, Gamepad2 as Do, Building2 as Bo, Wallet as Oo, Coffee as Ho, Plane as Ro, Music as jo, Camera as _o, ShoppingCart as Go, GraduationCap as Wo, Book as $o, Rocket as Uo, Code as Vo, Star as Yo, Heart as Ko, Users as Qo, User as Zo, Home as Jo, Briefcase as Xo, Pipette as er, Sunrise as Ta, Info as tr, Check as _a, BellRing as ar, ThumbsUp as nr, ThumbsDown as or, Plug as Ga, RotateCcw as Za, Trash2 as Cn, Plus as Ma, RefreshCw as rr, Pause as ir, Play as sr, Bell as Sn, ExternalLink as Wa, X as lr, CornerDownLeft as cr, Pencil as dr } from "lucide-react";
 import { useState as D, useEffect as ee, useRef as I, useLayoutEffect as $a } from "react";
-import { useAppApi as ma, useNotify as Vn, useChatLauncher as tn, ChatEmbed as cr } from "@kirocrew/app-sdk";
-const et = (e) => ({ size: p = 16, ...u }) => /* @__PURE__ */ t("svg", { viewBox: "0 0 24 24", width: p, height: p, fill: "currentColor", "aria-hidden": !0, ...u, children: /* @__PURE__ */ t("path", { d: e }) }), dr = et("M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"), pr = et("M18.316 5.684H24v12.632h-5.684V5.684zM5.684 24h12.632v-5.684H5.684V24zM18.316 5.684V0H1.895A1.894 1.894 0 0 0 0 1.895v16.421h5.684V5.684h12.632zm-7.207 6.25v-.065c.272-.144.5-.349.687-.617s.279-.595.279-.982c0-.379-.099-.72-.3-1.025a2.05 2.05 0 0 0-.832-.714 2.703 2.703 0 0 0-1.197-.257c-.6 0-1.094.156-1.481.467-.386.311-.65.671-.793 1.078l1.085.452c.086-.249.224-.461.413-.633.189-.172.445-.257.767-.257.33 0 .602.088.816.264a.86.86 0 0 1 .322.703c0 .33-.12.589-.36.778-.24.19-.535.284-.886.284h-.567v1.085h.633c.407 0 .748.109 1.02.327.272.218.407.499.407.843 0 .336-.129.614-.387.832s-.565.327-.924.327c-.351 0-.651-.103-.897-.311-.248-.208-.422-.502-.521-.881l-1.096.452c.178.616.505 1.082.977 1.401.472.319.984.478 1.538.477a2.84 2.84 0 0 0 1.293-.291c.382-.193.684-.458.902-.794.218-.336.327-.72.327-1.149 0-.429-.115-.797-.344-1.105a2.067 2.067 0 0 0-.881-.689zm2.093-1.931l.602.913L15 10.045v5.744h1.187V8.446h-.827l-2.158 1.557zM22.105 0h-3.289v5.184H24V1.895A1.894 1.894 0 0 0 22.105 0zm-3.289 23.5l4.684-4.684h-4.684V23.5zM0 22.105C0 23.152.848 24 1.895 24h3.289v-5.184H0v3.289z"), ur = et("M12.01 1.485c-2.082 0-3.754.02-3.743.047.01.02 1.708 3.001 3.774 6.62l3.76 6.574h3.76c2.081 0 3.753-.02 3.742-.047-.005-.02-1.708-3.001-3.775-6.62l-3.76-6.574zm-4.76 1.73a789.828 789.861 0 0 0-3.63 6.319L0 15.868l1.89 3.298 1.885 3.297 3.62-6.335 3.618-6.33-1.88-3.287C8.1 4.704 7.255 3.22 7.25 3.214zm2.259 12.653-.203.348c-.114.198-.96 1.672-1.88 3.287a423.93 423.948 0 0 1-1.698 2.97c-.01.026 3.24.042 7.222.042h7.244l1.796-3.157c.992-1.734 1.85-3.23 1.906-3.323l.104-.167h-7.249z"), mr = et("M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"), hr = et("M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"), gr = et("M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"), br = et("M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"), fr = et("M2.886 4.18A11.982 11.982 0 0 1 11.99 0C18.624 0 24 5.376 24 12.009c0 3.64-1.62 6.903-4.18 9.105L2.887 4.18ZM1.817 5.626l16.556 16.556c-.524.33-1.075.62-1.65.866L.951 7.277c.247-.575.537-1.126.866-1.65ZM.322 9.163l14.515 14.515c-.71.172-1.443.282-2.195.322L0 11.358a12 12 0 0 1 .322-2.195Zm-.17 4.862 9.823 9.824a12.02 12.02 0 0 1-9.824-9.824Z"), xr = et("M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"), vr = et("M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"), yr = et("M3 6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5zm2.2.2 6.8 5 6.8-5-.2-.2H5.4zM19 8.9l-6.4 4.7a1 1 0 0 1-1.2 0L5 8.9v8.6c0 .3.2.5.5.5h13c.3 0 .5-.2.5-.5z"), kr = et("M14.5 4a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM18.5 9.5H21a1 1 0 0 1 1 1V15a3 3 0 0 1-3 3 3 3 0 0 1-.5-.05zM3 9.5h11.5a1 1 0 0 1 1 1V16a5 5 0 0 1-5 5h-3.5A5 5 0 0 1 3 16zm4.5 2v1.7H6v1.5h1.5V18H9v-3.3h1.5v-1.5H9v-1.7z"), wr = et("M7.529 8.753h-.705v.941h.706c.376 0 .565-.188.565-.471-.001-.329-.236-.47-.566-.47zm-3.2.282c0-.235-.188-.329-.471-.329h-.705v.706h.659c.329-.047.517-.141.517-.377zm6.212 1.13h.847l-.423-1.083zm-6.588 0h-.847v.706h.847c.329 0 .518-.141.518-.376s-.189-.33-.518-.33zM0 0v24h24V0H0zm8.424 3.012h3.435v.941h-1.176v2.965H9.6V3.953H8.424v-.941zm-.236 0v.894h-2.07v.612H8v.847H6.118v.612h2.118v.941H5.082l-.047-3.906h3.153zm-2.635 7.623c0 .659-.565 1.082-1.459 1.082H2.071V7.812h2.023c.471 0 .847.141 1.082.329.142.141.236.377.236.659 0 .471-.235.706-.612.894.471.141.753.424.753.941zM2.682 5.647c.188.235.376.376.612.376.282 0 .424-.188.424-.565V2.965H4.8v2.494c0 .471-.141.847-.376 1.082s-.612.377-1.083.377c-.706.047-1.082-.236-1.364-.612l.705-.659zm8.377 15.341H2.071v-1.506h8.988v1.506zm.894-9.223l-.282-.706h-1.506l-.282.706h-1.13l.02-.047h-.679l-.8-1.176h-.47v1.176H5.741V7.812h1.835c.612 0 .988.141 1.271.424.235.235.329.518.329.894 0 .612-.329.988-.8 1.224l.605.878 1.465-3.419h1.035l1.647 3.953h-1.175zm2.4-.047h-1.082V7.812h1.082v3.906zm3.953 0h-.941L15.718 9.6v2.165h-1.082V7.812h.988l1.6 2.071V7.812h1.082v3.906zm1.929.047a2.488 2.488 0 0 1-1.835-.612l.612-.706c.376.329.8.471 1.271.471.282 0 .471-.094.471-.282s-.141-.235-.659-.376c-.847-.188-1.459-.424-1.459-1.224 0-.706.565-1.271 1.506-1.271.659 0 1.176.188 1.6.518l-.565.753c-.377-.236-.753-.377-1.083-.377-.282 0-.376.094-.376.235 0 .188.141.235.659.376.894.188 1.459.471 1.459 1.224-.001.8-.612 1.271-1.601 1.271z"), Cr = et("M21 0H3C1.343 0 0 1.343 0 3v18c0 1.656 1.343 3 3 3h18c1.656 0 3-1.344 3-3V3c0-1.657-1.344-3-3-3zM10.44 18.18c0 .795-.645 1.44-1.44 1.44H4.56c-.795 0-1.44-.645-1.44-1.44V4.56c0-.795.645-1.44 1.44-1.44H9c.795 0 1.44.645 1.44 1.44v13.62zm10.44-6c0 .794-.645 1.44-1.44 1.44H15c-.795 0-1.44-.646-1.44-1.44V4.56c0-.795.646-1.44 1.44-1.44h4.44c.795 0 1.44.645 1.44 1.44v7.62z"), Sr = ["it", "en", "es", "fr", "de", "pt"], Sn = () => {
+import { useAppApi as ma, useNotify as Vn, useChatLauncher as an, ChatEmbed as pr } from "@kirocrew/app-sdk";
+const et = (e) => ({ size: p = 16, ...u }) => /* @__PURE__ */ t("svg", { viewBox: "0 0 24 24", width: p, height: p, fill: "currentColor", "aria-hidden": !0, ...u, children: /* @__PURE__ */ t("path", { d: e }) }), ur = et("M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"), mr = et("M18.316 5.684H24v12.632h-5.684V5.684zM5.684 24h12.632v-5.684H5.684V24zM18.316 5.684V0H1.895A1.894 1.894 0 0 0 0 1.895v16.421h5.684V5.684h12.632zm-7.207 6.25v-.065c.272-.144.5-.349.687-.617s.279-.595.279-.982c0-.379-.099-.72-.3-1.025a2.05 2.05 0 0 0-.832-.714 2.703 2.703 0 0 0-1.197-.257c-.6 0-1.094.156-1.481.467-.386.311-.65.671-.793 1.078l1.085.452c.086-.249.224-.461.413-.633.189-.172.445-.257.767-.257.33 0 .602.088.816.264a.86.86 0 0 1 .322.703c0 .33-.12.589-.36.778-.24.19-.535.284-.886.284h-.567v1.085h.633c.407 0 .748.109 1.02.327.272.218.407.499.407.843 0 .336-.129.614-.387.832s-.565.327-.924.327c-.351 0-.651-.103-.897-.311-.248-.208-.422-.502-.521-.881l-1.096.452c.178.616.505 1.082.977 1.401.472.319.984.478 1.538.477a2.84 2.84 0 0 0 1.293-.291c.382-.193.684-.458.902-.794.218-.336.327-.72.327-1.149 0-.429-.115-.797-.344-1.105a2.067 2.067 0 0 0-.881-.689zm2.093-1.931l.602.913L15 10.045v5.744h1.187V8.446h-.827l-2.158 1.557zM22.105 0h-3.289v5.184H24V1.895A1.894 1.894 0 0 0 22.105 0zm-3.289 23.5l4.684-4.684h-4.684V23.5zM0 22.105C0 23.152.848 24 1.895 24h3.289v-5.184H0v3.289z"), hr = et("M12.01 1.485c-2.082 0-3.754.02-3.743.047.01.02 1.708 3.001 3.774 6.62l3.76 6.574h3.76c2.081 0 3.753-.02 3.742-.047-.005-.02-1.708-3.001-3.775-6.62l-3.76-6.574zm-4.76 1.73a789.828 789.861 0 0 0-3.63 6.319L0 15.868l1.89 3.298 1.885 3.297 3.62-6.335 3.618-6.33-1.88-3.287C8.1 4.704 7.255 3.22 7.25 3.214zm2.259 12.653-.203.348c-.114.198-.96 1.672-1.88 3.287a423.93 423.948 0 0 1-1.698 2.97c-.01.026 3.24.042 7.222.042h7.244l1.796-3.157c.992-1.734 1.85-3.23 1.906-3.323l.104-.167h-7.249z"), gr = et("M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"), br = et("M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"), fr = et("M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"), xr = et("M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"), vr = et("M2.886 4.18A11.982 11.982 0 0 1 11.99 0C18.624 0 24 5.376 24 12.009c0 3.64-1.62 6.903-4.18 9.105L2.887 4.18ZM1.817 5.626l16.556 16.556c-.524.33-1.075.62-1.65.866L.951 7.277c.247-.575.537-1.126.866-1.65ZM.322 9.163l14.515 14.515c-.71.172-1.443.282-2.195.322L0 11.358a12 12 0 0 1 .322-2.195Zm-.17 4.862 9.823 9.824a12.02 12.02 0 0 1-9.824-9.824Z"), yr = et("M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"), kr = et("M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"), wr = et("M3 6.5A2.5 2.5 0 0 1 5.5 4h13A2.5 2.5 0 0 1 21 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-13A2.5 2.5 0 0 1 3 17.5zm2.2.2 6.8 5 6.8-5-.2-.2H5.4zM19 8.9l-6.4 4.7a1 1 0 0 1-1.2 0L5 8.9v8.6c0 .3.2.5.5.5h13c.3 0 .5-.2.5-.5z"), Cr = et("M14.5 4a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM18.5 9.5H21a1 1 0 0 1 1 1V15a3 3 0 0 1-3 3 3 3 0 0 1-.5-.05zM3 9.5h11.5a1 1 0 0 1 1 1V16a5 5 0 0 1-5 5h-3.5A5 5 0 0 1 3 16zm4.5 2v1.7H6v1.5h1.5V18H9v-3.3h1.5v-1.5H9v-1.7z"), Sr = et("M7.529 8.753h-.705v.941h.706c.376 0 .565-.188.565-.471-.001-.329-.236-.47-.566-.47zm-3.2.282c0-.235-.188-.329-.471-.329h-.705v.706h.659c.329-.047.517-.141.517-.377zm6.212 1.13h.847l-.423-1.083zm-6.588 0h-.847v.706h.847c.329 0 .518-.141.518-.376s-.189-.33-.518-.33zM0 0v24h24V0H0zm8.424 3.012h3.435v.941h-1.176v2.965H9.6V3.953H8.424v-.941zm-.236 0v.894h-2.07v.612H8v.847H6.118v.612h2.118v.941H5.082l-.047-3.906h3.153zm-2.635 7.623c0 .659-.565 1.082-1.459 1.082H2.071V7.812h2.023c.471 0 .847.141 1.082.329.142.141.236.377.236.659 0 .471-.235.706-.612.894.471.141.753.424.753.941zM2.682 5.647c.188.235.376.376.612.376.282 0 .424-.188.424-.565V2.965H4.8v2.494c0 .471-.141.847-.376 1.082s-.612.377-1.083.377c-.706.047-1.082-.236-1.364-.612l.705-.659zm8.377 15.341H2.071v-1.506h8.988v1.506zm.894-9.223l-.282-.706h-1.506l-.282.706h-1.13l.02-.047h-.679l-.8-1.176h-.47v1.176H5.741V7.812h1.835c.612 0 .988.141 1.271.424.235.235.329.518.329.894 0 .612-.329.988-.8 1.224l.605.878 1.465-3.419h1.035l1.647 3.953h-1.175zm2.4-.047h-1.082V7.812h1.082v3.906zm3.953 0h-.941L15.718 9.6v2.165h-1.082V7.812h.988l1.6 2.071V7.812h1.082v3.906zm1.929.047a2.488 2.488 0 0 1-1.835-.612l.612-.706c.376.329.8.471 1.271.471.282 0 .471-.094.471-.282s-.141-.235-.659-.376c-.847-.188-1.459-.424-1.459-1.224 0-.706.565-1.271 1.506-1.271.659 0 1.176.188 1.6.518l-.565.753c-.377-.236-.753-.377-1.083-.377-.282 0-.376.094-.376.235 0 .188.141.235.659.376.894.188 1.459.471 1.459 1.224-.001.8-.612 1.271-1.601 1.271z"), zr = et("M21 0H3C1.343 0 0 1.343 0 3v18c0 1.656 1.343 3 3 3h18c1.656 0 3-1.344 3-3V3c0-1.657-1.344-3-3-3zM10.44 18.18c0 .795-.645 1.44-1.44 1.44H4.56c-.795 0-1.44-.645-1.44-1.44V4.56c0-.795.645-1.44 1.44-1.44H9c.795 0 1.44.645 1.44 1.44v13.62zm10.44-6c0 .794-.645 1.44-1.44 1.44H15c-.795 0-1.44-.646-1.44-1.44V4.56c0-.795.646-1.44 1.44-1.44h4.44c.795 0 1.44.645 1.44 1.44v7.62z"), Ar = ["it", "en", "es", "fr", "de", "pt"], Ja = () => {
   try {
     return document.documentElement.lang || navigator.language || "en";
   } catch {
     return "en";
   }
 };
-function zr(e) {
+function Yn(e) {
   const p = e.slice(0, 2).toLowerCase();
-  return Sr.includes(p) ? p : "en";
+  return Ar.includes(p) ? p : "en";
 }
-const Ar = {
+const Nr = {
   it: {
     today: "Oggi",
     connections: "Fonti",
@@ -108,6 +108,8 @@ const Ar = {
     liCoProfile: "Solo il profilo personale",
     liCoBoth: "Profilo e pagina aziendale",
     liCoOnly: "Solo la pagina aziendale",
+    folderName: "Cartella locale",
+    defaultSpaces: ["Lavoro", "Personale"],
     voteUp: "Più così",
     voteDown: "Meno così",
     goDone: "Avviato",
@@ -147,7 +149,7 @@ const Ar = {
     readFail: "Non riesco a leggere le connessioni salvate.",
     saveFail: "Salvataggio non riuscito.",
     chatFail: "Non riesco ad aprire la chat da qui.",
-    apps: { gmail: "Posta in arrivo, non letti e con stella", calendar: "Riunioni e impegni di oggi", drive: "File modificati di recente", slack: "Menzioni, DM e canali scelti", discord: "Letto dalla pagina aperta, senza bot", jira: "Issue assegnate a te", confluence: "Pagine che osservi", folder: "Cerca quello che scrivi nel focus", claudecode: "Riprendi da dove avevi lasciato", kiro: "Riprendi da dove avevi lasciato", googlechat: "Messaggi diretti e tag", linkedin: "Statistiche e inviti", notion: "Pagine e aggiornamenti", linear: "Issue assegnate", trello: "Schede assegnate e scadenze", outlook: "Posta Outlook, non letti e riunioni", teams: "Chat e canali di Teams, menzioni", telegram: "Messaggi e chat scelte (sola lettura)", youtrack: "Issue assegnate e in scadenza", github: "Notifiche e pull request" },
+    apps: { web: "Notizie dal web sui tuoi temi", gmail: "Posta in arrivo, non letti e con stella", calendar: "Riunioni e impegni di oggi", drive: "File modificati di recente", slack: "Menzioni, DM e canali scelti", discord: "Letto dalla pagina aperta, senza bot", jira: "Issue assegnate a te", confluence: "Pagine che osservi", folder: "Cerca quello che scrivi nel focus", claudecode: "Riprendi da dove avevi lasciato", kiro: "Riprendi da dove avevi lasciato", googlechat: "Messaggi diretti e tag", linkedin: "Statistiche e inviti", notion: "Pagine e aggiornamenti", linear: "Issue assegnate", trello: "Schede assegnate e scadenze", outlook: "Posta Outlook, non letti e riunioni", teams: "Chat e canali di Teams, menzioni", telegram: "Messaggi e chat scelte (sola lettura)", youtrack: "Issue assegnate e in scadenza", github: "Notifiche e pull request" },
     connect: "Collega",
     chatReset: "Nuova conversazione",
     lnkUrl: "Indirizzo (https://nome.youtrack.cloud)",
@@ -309,6 +311,8 @@ const Ar = {
     liCoProfile: "Personal profile only",
     liCoBoth: "Profile and company page",
     liCoOnly: "Company page only",
+    folderName: "Local folder",
+    defaultSpaces: ["Work", "Personal"],
     voteUp: "More like this",
     voteDown: "Less like this",
     goDone: "Started",
@@ -348,7 +352,7 @@ const Ar = {
     readFail: "Could not read the saved connections.",
     saveFail: "Saving failed.",
     chatFail: "Could not open the chat from here.",
-    apps: { gmail: "Inbox, unread and starred", calendar: "Today's meetings and commitments", drive: "Recently modified files", slack: "Mentions, DMs and chosen channels", discord: "Read from the open page, no bot", jira: "Issues assigned to you", confluence: "Pages you watch", folder: "Searches for what you write in focus", claudecode: "Pick up where you left off", kiro: "Pick up where you left off", googlechat: "Direct messages and tags", linkedin: "Stats and invitations", notion: "Pages and updates", linear: "Assigned issues", trello: "Cards assigned to you and due dates", outlook: "Outlook mail, unread and meetings", teams: "Teams chats and channels, mentions", telegram: "Messages and chosen chats (read-only)", youtrack: "Assigned and due issues", github: "Notifications and pull requests" },
+    apps: { web: "News from the web on your topics", gmail: "Inbox, unread and starred", calendar: "Today's meetings and commitments", drive: "Recently modified files", slack: "Mentions, DMs and chosen channels", discord: "Read from the open page, no bot", jira: "Issues assigned to you", confluence: "Pages you watch", folder: "Searches for what you write in focus", claudecode: "Pick up where you left off", kiro: "Pick up where you left off", googlechat: "Direct messages and tags", linkedin: "Stats and invitations", notion: "Pages and updates", linear: "Assigned issues", trello: "Cards assigned to you and due dates", outlook: "Outlook mail, unread and meetings", teams: "Teams chats and channels, mentions", telegram: "Messages and chosen chats (read-only)", youtrack: "Assigned and due issues", github: "Notifications and pull requests" },
     connect: "Connect",
     chatReset: "New conversation",
     lnkUrl: "Address (https://name.youtrack.cloud)",
@@ -510,6 +514,8 @@ const Ar = {
     liCoProfile: "Solo el perfil personal",
     liCoBoth: "Perfil y página de empresa",
     liCoOnly: "Solo la página de empresa",
+    folderName: "Carpeta local",
+    defaultSpaces: ["Trabajo", "Personal"],
     voteUp: "Más como esto",
     voteDown: "Menos como esto",
     goDone: "Iniciado",
@@ -549,7 +555,7 @@ const Ar = {
     readFail: "No puedo leer las conexiones guardadas.",
     saveFail: "No se pudo guardar.",
     chatFail: "No puedo abrir el chat desde aquí.",
-    apps: { gmail: "Bandeja de entrada, no leídos y destacados", calendar: "Reuniones y compromisos de hoy", drive: "Archivos modificados recientemente", slack: "Menciones, mensajes directos y canales elegidos", discord: "Leído desde la página abierta, sin bot", jira: "Incidencias asignadas a ti", confluence: "Páginas que observas", folder: "Busca lo que escribes en el foco", claudecode: "Retoma donde lo dejaste", kiro: "Retoma donde lo dejaste", googlechat: "Mensajes directos y menciones", linkedin: "Estadísticas e invitaciones", notion: "Páginas y novedades", linear: "Incidencias asignadas", trello: "Tarjetas asignadas y vencimientos", outlook: "Correo de Outlook, no leídos y reuniones", teams: "Chats y canales de Teams, menciones", telegram: "Mensajes y chats elegidos (solo lectura)", youtrack: "Incidencias asignadas y por vencer", github: "Notificaciones y pull requests" },
+    apps: { web: "Noticias de la web sobre tus temas", gmail: "Bandeja de entrada, no leídos y destacados", calendar: "Reuniones y compromisos de hoy", drive: "Archivos modificados recientemente", slack: "Menciones, mensajes directos y canales elegidos", discord: "Leído desde la página abierta, sin bot", jira: "Incidencias asignadas a ti", confluence: "Páginas que observas", folder: "Busca lo que escribes en el foco", claudecode: "Retoma donde lo dejaste", kiro: "Retoma donde lo dejaste", googlechat: "Mensajes directos y menciones", linkedin: "Estadísticas e invitaciones", notion: "Páginas y novedades", linear: "Incidencias asignadas", trello: "Tarjetas asignadas y vencimientos", outlook: "Correo de Outlook, no leídos y reuniones", teams: "Chats y canales de Teams, menciones", telegram: "Mensajes y chats elegidos (solo lectura)", youtrack: "Incidencias asignadas y por vencer", github: "Notificaciones y pull requests" },
     connect: "Conectar",
     chatReset: "Nueva conversación",
     lnkUrl: "Dirección (https://nombre.youtrack.cloud)",
@@ -711,6 +717,8 @@ const Ar = {
     liCoProfile: "Uniquement le profil personnel",
     liCoBoth: "Profil et page entreprise",
     liCoOnly: "Uniquement la page entreprise",
+    folderName: "Dossier local",
+    defaultSpaces: ["Travail", "Personnel"],
     voteUp: "Plus comme ça",
     voteDown: "Moins comme ça",
     goDone: "Lancé",
@@ -750,7 +758,7 @@ const Ar = {
     readFail: "Impossible de lire les connexions enregistrées.",
     saveFail: "Échec de l'enregistrement.",
     chatFail: "Impossible d'ouvrir le chat d'ici.",
-    apps: { gmail: "Boîte de réception, non lus et suivis", calendar: "Réunions et engagements d'aujourd'hui", drive: "Fichiers modifiés récemment", slack: "Mentions, messages privés et canaux choisis", discord: "Lu depuis la page ouverte, sans bot", jira: "Tickets qui te sont assignés", confluence: "Pages que tu observes", folder: "Cherche ce que tu écris dans le focus", claudecode: "Reprends où tu en étais", kiro: "Reprends où tu en étais", googlechat: "Messages directs et mentions", linkedin: "Statistiques et invitations", notion: "Pages et mises à jour", linear: "Tickets assignés", trello: "Cartes assignées et échéances", outlook: "Courrier Outlook, non lus et réunions", teams: "Discussions et canaux Teams, mentions", telegram: "Messages et discussions choisies (lecture seule)", youtrack: "Tickets assignés et à échéance", github: "Notifications et pull requests" },
+    apps: { web: "Actualités du web sur vos sujets", gmail: "Boîte de réception, non lus et suivis", calendar: "Réunions et engagements d'aujourd'hui", drive: "Fichiers modifiés récemment", slack: "Mentions, messages privés et canaux choisis", discord: "Lu depuis la page ouverte, sans bot", jira: "Tickets qui te sont assignés", confluence: "Pages que tu observes", folder: "Cherche ce que tu écris dans le focus", claudecode: "Reprends où tu en étais", kiro: "Reprends où tu en étais", googlechat: "Messages directs et mentions", linkedin: "Statistiques et invitations", notion: "Pages et mises à jour", linear: "Tickets assignés", trello: "Cartes assignées et échéances", outlook: "Courrier Outlook, non lus et réunions", teams: "Discussions et canaux Teams, mentions", telegram: "Messages et discussions choisies (lecture seule)", youtrack: "Tickets assignés et à échéance", github: "Notifications et pull requests" },
     connect: "Connecter",
     chatReset: "Nouvelle conversation",
     lnkUrl: "Adresse (https://nom.youtrack.cloud)",
@@ -912,6 +920,8 @@ const Ar = {
     liCoProfile: "Nur persönliches Profil",
     liCoBoth: "Profil und Unternehmensseite",
     liCoOnly: "Nur Unternehmensseite",
+    folderName: "Lokaler Ordner",
+    defaultSpaces: ["Arbeit", "Privat"],
     voteUp: "Mehr davon",
     voteDown: "Weniger davon",
     goDone: "Gestartet",
@@ -951,7 +961,7 @@ const Ar = {
     readFail: "Gespeicherte Verbindungen konnten nicht gelesen werden.",
     saveFail: "Speichern fehlgeschlagen.",
     chatFail: "Der Chat kann von hier nicht geöffnet werden.",
-    apps: { gmail: "Posteingang, Ungelesenes und Markiertes", calendar: "Heutige Termine und Verpflichtungen", drive: "Zuletzt geänderte Dateien", slack: "Erwähnungen, DMs und gewählte Kanäle", discord: "Von der offenen Seite gelesen, ohne Bot", jira: "Dir zugewiesene Issues", confluence: "Von dir beobachtete Seiten", folder: "Sucht, was du im Fokus schreibst", claudecode: "Mach dort weiter, wo du aufgehört hast", kiro: "Mach dort weiter, wo du aufgehört hast", googlechat: "Direktnachrichten und Erwähnungen", linkedin: "Statistiken und Einladungen", notion: "Seiten und Änderungen", linear: "Zugewiesene Issues", trello: "Zugewiesene Karten und Fristen", outlook: "Outlook-Mails, Ungelesenes und Termine", teams: "Teams-Chats und -Kanäle, Erwähnungen", telegram: "Nachrichten und gewählte Chats (nur lesen)", youtrack: "Zugewiesene und fällige Tickets", github: "Benachrichtigungen und Pull Requests" },
+    apps: { web: "Nachrichten aus dem Web zu deinen Themen", gmail: "Posteingang, Ungelesenes und Markiertes", calendar: "Heutige Termine und Verpflichtungen", drive: "Zuletzt geänderte Dateien", slack: "Erwähnungen, DMs und gewählte Kanäle", discord: "Von der offenen Seite gelesen, ohne Bot", jira: "Dir zugewiesene Issues", confluence: "Von dir beobachtete Seiten", folder: "Sucht, was du im Fokus schreibst", claudecode: "Mach dort weiter, wo du aufgehört hast", kiro: "Mach dort weiter, wo du aufgehört hast", googlechat: "Direktnachrichten und Erwähnungen", linkedin: "Statistiken und Einladungen", notion: "Seiten und Änderungen", linear: "Zugewiesene Issues", trello: "Zugewiesene Karten und Fristen", outlook: "Outlook-Mails, Ungelesenes und Termine", teams: "Teams-Chats und -Kanäle, Erwähnungen", telegram: "Nachrichten und gewählte Chats (nur lesen)", youtrack: "Zugewiesene und fällige Tickets", github: "Benachrichtigungen und Pull Requests" },
     connect: "Verbinden",
     chatReset: "Neues Gespräch",
     lnkUrl: "Adresse (https://name.youtrack.cloud)",
@@ -1113,6 +1123,8 @@ const Ar = {
     liCoProfile: "Só o perfil pessoal",
     liCoBoth: "Perfil e página da empresa",
     liCoOnly: "Só a página da empresa",
+    folderName: "Pasta local",
+    defaultSpaces: ["Trabalho", "Pessoal"],
     voteUp: "Mais assim",
     voteDown: "Menos assim",
     goDone: "Iniciado",
@@ -1152,7 +1164,7 @@ const Ar = {
     readFail: "Não consigo ler as conexões salvas.",
     saveFail: "Falha ao salvar.",
     chatFail: "Não consigo abrir o chat daqui.",
-    apps: { gmail: "Caixa de entrada, não lidos e com estrela", calendar: "Reuniões e compromissos de hoje", drive: "Arquivos modificados recentemente", slack: "Menções, DMs e canais escolhidos", discord: "Lido da página aberta, sem bot", jira: "Issues atribuídas a você", confluence: "Páginas que você observa", folder: "Procura o que você escreve no foco", claudecode: "Retome de onde parou", kiro: "Retome de onde parou", googlechat: "Mensagens diretas e marcações", linkedin: "Estatísticas e convites", notion: "Páginas e atualizações", linear: "Issues atribuídas", trello: "Cartões atribuídos e prazos", outlook: "E-mails do Outlook, não lidos e reuniões", teams: "Chats e canais do Teams, menções", telegram: "Mensagens e chats escolhidos (somente leitura)", youtrack: "Issues atribuídas e com prazo", github: "Notificações e pull requests" },
+    apps: { web: "Notícias da web sobre os seus temas", gmail: "Caixa de entrada, não lidos e com estrela", calendar: "Reuniões e compromissos de hoje", drive: "Arquivos modificados recentemente", slack: "Menções, DMs e canais escolhidos", discord: "Lido da página aberta, sem bot", jira: "Issues atribuídas a você", confluence: "Páginas que você observa", folder: "Procura o que você escreve no foco", claudecode: "Retome de onde parou", kiro: "Retome de onde parou", googlechat: "Mensagens diretas e marcações", linkedin: "Estatísticas e convites", notion: "Páginas e atualizações", linear: "Issues atribuídas", trello: "Cartões atribuídos e prazos", outlook: "E-mails do Outlook, não lidos e reuniões", teams: "Chats e canais do Teams, menções", telegram: "Mensagens e chats escolhidos (somente leitura)", youtrack: "Issues atribuídas e com prazo", github: "Notificações e pull requests" },
     connect: "Conectar",
     chatReset: "Nova conversa",
     lnkUrl: "Endereço (https://nome.youtrack.cloud)",
@@ -1220,7 +1232,7 @@ const Ar = {
     toastLater: "Mais tarde",
     connectMsg: (e) => "Conecte {n} ao Alba: guie-me passo a passo.".replace("{n}", e)
   }
-}, Nr = (e) => Ar[e], Tr = [
+}, Kn = (e) => Nr[e], Tr = [
   {
     artist: "Katsushika Hokusai",
     title: "The Great Wave off Kanagawa",
@@ -1338,78 +1350,84 @@ const Ar = {
   for (let C = 0; C < p.length; C++) u = u * 31 + p.charCodeAt(C) >>> 0;
   return Nn[p ? u % Nn.length : 0];
 }, ut = [
-  { key: "gmail", name: "Gmail", hint: "Posta in arrivo, non letti e con stella", color: "#EA4335", Icon: dr },
-  { key: "calendar", name: "Google Calendar", hint: "Riunioni e impegni di oggi", color: "#4285F4", Icon: pr },
-  { key: "drive", name: "Google Drive", hint: "File modificati di recente", color: "#1FA463", Icon: ur },
-  { key: "slack", name: "Slack", hint: "Menzioni, DM e canali scelti", color: "#E01E5A", Icon: mr },
-  { key: "discord", name: "Discord", hint: "Letto dalla pagina aperta, senza bot", color: "#5865F2", Icon: hr },
-  { key: "linkedin", name: "LinkedIn", hint: "Statistiche del profilo, post, inviti e lavori", color: "#0A66C2", Icon: gr },
-  { key: "notion", name: "Notion", hint: "Pagine e aggiornamenti", color: "#9B9A97", Icon: br },
-  { key: "linear", name: "Linear", hint: "Issue assegnate", color: "#5E6AD2", Icon: fr },
-  { key: "trello", name: "Trello", hint: "Schede assegnate e scadenze", color: "#0079BF", Icon: Cr },
-  { key: "github", name: "GitHub", hint: "Notifiche e pull request", color: "#8B949E", Icon: xr },
-  { key: "outlook", name: "Outlook", hint: "", color: "#0078D4", Icon: yr },
-  { key: "teams", name: "Microsoft Teams", hint: "", color: "#6264A7", Icon: kr },
-  { key: "telegram", name: "Telegram", hint: "", color: "#26A5E4", Icon: vr },
-  { key: "youtrack", name: "YouTrack", hint: "", color: "#FF318C", Icon: wr },
+  { key: "gmail", name: "Gmail", hint: "Posta in arrivo, non letti e con stella", color: "#EA4335", Icon: ur },
+  { key: "calendar", name: "Google Calendar", hint: "Riunioni e impegni di oggi", color: "#4285F4", Icon: mr },
+  { key: "drive", name: "Google Drive", hint: "File modificati di recente", color: "#1FA463", Icon: hr },
+  { key: "slack", name: "Slack", hint: "Menzioni, DM e canali scelti", color: "#E01E5A", Icon: gr },
+  { key: "discord", name: "Discord", hint: "Letto dalla pagina aperta, senza bot", color: "#5865F2", Icon: br },
+  { key: "linkedin", name: "LinkedIn", hint: "Statistiche del profilo, post, inviti e lavori", color: "#0A66C2", Icon: fr },
+  { key: "notion", name: "Notion", hint: "Pagine e aggiornamenti", color: "#9B9A97", Icon: xr },
+  { key: "linear", name: "Linear", hint: "Issue assegnate", color: "#5E6AD2", Icon: vr },
+  { key: "trello", name: "Trello", hint: "Schede assegnate e scadenze", color: "#0079BF", Icon: zr },
+  { key: "github", name: "GitHub", hint: "Notifiche e pull request", color: "#8B949E", Icon: yr },
+  { key: "outlook", name: "Outlook", hint: "", color: "#0078D4", Icon: wr },
+  { key: "teams", name: "Microsoft Teams", hint: "", color: "#6264A7", Icon: Cr },
+  { key: "telegram", name: "Telegram", hint: "", color: "#26A5E4", Icon: kr },
+  { key: "youtrack", name: "YouTrack", hint: "", color: "#FF318C", Icon: Sr },
   { key: "googlechat", name: "Google Chat", hint: "Messaggi diretti e tag", color: "#00897B", Icon: ua },
   { key: "jira", name: "Jira", hint: "Issue assegnate a me", color: "#0052CC", Icon: Wn },
-  { key: "confluence", name: "Confluence", hint: "Pagine che osservo", color: "#172B4D", Icon: ko },
+  { key: "confluence", name: "Confluence", hint: "Pagine che osservo", color: "#172B4D", Icon: Co },
   { key: "web", name: "Web", hint: "Notizie dal web sui tuoi temi", color: "#0EA5E9", Icon: $n },
-  { key: "folder", name: "Cartella locale", hint: "Cerca quello che scrivi nel focus", color: "#64748B", Icon: en },
+  { key: "folder", name: "Local folder", hint: "Cerca quello che scrivi nel focus", color: "#64748B", Icon: tn },
   { key: "claudecode", name: "Claude Code", hint: "Riprendi da dove avevi lasciato", color: "#D97757", Icon: Un },
-  { key: "kiro", name: "Kiro", hint: "Riprendi da dove avevi lasciato", color: "#6366F1", Icon: wo }
-], Yn = {
-  briefcase: Zo,
-  home: Qo,
-  user: Ko,
-  users: Yo,
-  heart: Vo,
-  star: Uo,
-  code: $o,
-  rocket: Wo,
-  book: Go,
-  school: _o,
-  cart: jo,
-  camera: Ro,
-  music: Ho,
-  plane: Oo,
-  coffee: Bo,
-  wallet: Do,
-  building: qo,
-  game: Po,
-  fitness: Lo,
-  idea: Eo,
+  { key: "kiro", name: "Kiro", hint: "Riprendi da dove avevi lasciato", color: "#6366F1", Icon: So }
+], Qn = {
+  briefcase: Xo,
+  home: Jo,
+  user: Zo,
+  users: Qo,
+  heart: Ko,
+  star: Yo,
+  code: Vo,
+  rocket: Uo,
+  book: $o,
+  school: Wo,
+  cart: Go,
+  camera: _o,
+  music: jo,
+  plane: Ro,
+  coffee: Ho,
+  wallet: Oo,
+  building: Bo,
+  game: Do,
+  fitness: qo,
+  idea: Po,
   globe: $n,
-  folder: en,
+  folder: tn,
   sparkles: Un,
-  leaf: Io,
-  wrench: Fo,
-  palette: Mo,
-  shield: To,
-  cloud: No,
-  sun: Ao,
-  moon: zo,
-  bike: So,
-  car: Co
-}, Fr = Wn, Ir = Jo, Er = (e) => /lavor|work|ufficio|office|azienda|company/i.test(e) ? "briefcase" : /person|privat|casa|home|famil/i.test(e) ? "user" : "folder", Lr = "Anchor Apple Archive Atom Award Baby Backpack Banknote Beaker Beer Bird Bone Bookmark Bot Brain Bug Bus Cake Calculator Candy Carrot Cat ChefHat Church Clapperboard Clock Compass Cookie Cpu Crown Diamond Dna Dog DollarSign Drama Droplet Drum Egg Factory Feather Fish FlaskConical Flag Flame Flower Footprints Gem Gift Glasses Guitar Hammer Hand Headphones Hotel Hourglass IceCream Image Key Landmark Languages Laptop Library LifeBuoy Lock Map MapPin Medal Mic Microscope Mountain Newspaper Paintbrush Paperclip PawPrint Pen Pencil Phone PiggyBank Pill Pizza Plug Popcorn Puzzle Radio Ruler Sailboat Sandwich Scale Scissors Server Ship Shirt ShoppingBag Smile Snowflake Soup Sprout Stethoscope Store Syringe Tag Target Telescope Tent Terminal Ticket Timer Train Trees Trophy Truck Tv Umbrella Utensils Video Waves Wheat Wifi Wind Wine Zap".split(" "), Tt = (e) => {
+  leaf: Lo,
+  wrench: Eo,
+  palette: Io,
+  shield: Fo,
+  cloud: Mo,
+  sun: To,
+  moon: No,
+  bike: Ao,
+  car: zo
+}, Fr = Wn, Ir = er, Er = (e) => /lavor|work|ufficio|office|azienda|company|trabaj|trabalh|travail|arbeit|bureau|büro/i.test(e) ? "briefcase" : /person|privat|casa|home|famil|pessoal|maison|zuhause/i.test(e) ? "user" : "folder", Lr = "Anchor Apple Archive Atom Award Baby Backpack Banknote Beaker Beer Bird Bone Bookmark Bot Brain Bug Bus Cake Calculator Candy Carrot Cat ChefHat Church Clapperboard Clock Compass Cookie Cpu Crown Diamond Dna Dog DollarSign Drama Droplet Drum Egg Factory Feather Fish FlaskConical Flag Flame Flower Footprints Gem Gift Glasses Guitar Hammer Hand Headphones Hotel Hourglass IceCream Image Key Landmark Languages Laptop Library LifeBuoy Lock Map MapPin Medal Mic Microscope Mountain Newspaper Paintbrush Paperclip PawPrint Pen Pencil Phone PiggyBank Pill Pizza Plug Popcorn Puzzle Radio Ruler Sailboat Sandwich Scale Scissors Server Ship Shirt ShoppingBag Smile Snowflake Soup Sprout Stethoscope Store Syringe Tag Target Telescope Tent Terminal Ticket Timer Train Trees Trophy Truck Tv Umbrella Utensils Video Waves Wheat Wifi Wind Wine Zap".split(" "), Tt = (e) => {
   var p;
-  return (p = yo) == null ? void 0 : p[e];
-}, Kn = (e) => Yn[e] ?? (e.startsWith("lu:") ? Tt(e.slice(3)) : void 0), Qn = (e, p) => {
+  return (p = wo) == null ? void 0 : p[e];
+}, Zn = (e) => Qn[e] ?? (e.startsWith("lu:") ? Tt(e.slice(3)) : void 0), Jn = (e, p) => {
   var u;
-  return Kn(((u = e.spaceIcons) == null ? void 0 : u[p]) ?? Er(p)) ?? en;
+  return Zn(((u = e.spaceIcons) == null ? void 0 : u[p]) ?? Er(p)) ?? tn;
 }, Mn = ["#F59E0B", "#8B5CF6", "#10B981", "#EC4899", "#3B82F6", "#EF4444"], Fn = ["#EF4444", "#F97316", "#F59E0B", "#EAB308", "#84CC16", "#22C55E", "#10B981", "#14B8A6", "#06B6D4", "#0EA5E9", "#3B82F6", "#6366F1", "#8B5CF6", "#A855F7", "#D946EF", "#EC4899", "#F43F5E", "#FB7185", "#FDBA74", "#A3E635", "#2DD4BF", "#7DD3FC", "#C4B5FD", "#78716C", "#94A3B8", "#64748B", "#A16207", "#0F766E", "#1E3A8A", "#E11D48", "#65A30D", "#0284C7", "#9A3412"], ya = (e, p) => {
   var u;
   return ((u = e.spaceColors) == null ? void 0 : u[p]) ?? Mn[Math.max(0, e.spaces.indexOf(p)) % Mn.length];
-}, Zn = { accounts: {}, spaces: ["Lavoro", "Personale"] }, ka = "/api/apps/alba/config";
+}, Xn = { accounts: {}, spaces: (() => {
+  try {
+    return Kn(Yn(Ja())).defaultSpaces;
+  } catch {
+    return ["Work", "Personal"];
+  }
+})() }, ka = "/api/apps/alba/config";
 function ta() {
-  const [e, p] = D(Sn);
+  const [e, p] = D(Ja);
   ee(() => {
-    const C = document.documentElement, o = new MutationObserver(() => p(Sn()));
+    const C = document.documentElement, o = new MutationObserver(() => p(Ja()));
     return o.observe(C, { attributes: !0, attributeFilter: ["lang"] }), () => o.disconnect();
   }, []);
-  const u = zr(e);
-  return { code: e, lang: u, t: Nr(u) };
+  const u = Yn(e);
+  return { code: e, lang: u, t: Kn(u) };
 }
 function Pr() {
   const e = ma(), { code: p } = ta();
@@ -1424,10 +1442,10 @@ function Pr() {
     };
   }, [p]);
 }
-let Ot = Zn, Ja = !1;
+let Ot = Xn, Xa = !1;
 const xa = /* @__PURE__ */ new Set();
-let Jn, In, va = {}, Ea = null, Xn = () => {
-}, an = () => {
+let eo, In, va = {}, Ea = null, to = () => {
+}, nn = () => {
 };
 const Fa = () => xa.forEach((e) => e()), Ia = () => Ea.get(ka).then((e) => {
   const p = (e == null ? void 0 : e.config) ?? e;
@@ -1435,10 +1453,10 @@ const Fa = () => xa.forEach((e) => e()), Ia = () => Ea.get(ka).then((e) => {
 });
 function qr() {
   Ia().then((e) => {
-    e.accounts && (Ot = { ...Zn, ...e });
-  }).catch(() => Xn()).finally(() => {
-    Ja = !0, Fa();
-  }), Jn = setInterval(() => {
+    e.accounts && (Ot = { ...Xn, ...e });
+  }).catch(() => to()).finally(() => {
+    Xa = !0, Fa();
+  }), eo = setInterval(() => {
     Ia().then((e) => {
       const p = va.accounts === void 0;
       Ot = { ...Ot, brief: e.brief, tasks: e.tasks, reminders: e.reminders, health: e.health, ...p && e.accounts ? { accounts: e.accounts } : {} }, Fa();
@@ -1454,7 +1472,7 @@ function Ua(e) {
       const u = await Ia();
       await Ea.put(ka, { ...u, ...p });
     } catch {
-      an();
+      nn();
     }
   }, 400);
 }
@@ -1464,20 +1482,20 @@ async function En(e) {
     const p = await Ia();
     await Ea.put(ka, { ...p, reminders: e(p.reminders ?? []) });
   } catch {
-    an();
+    nn();
   }
 }
 const Ln = (e) => String(e).padStart(2, "0"), za = (e = /* @__PURE__ */ new Date()) => `${e.getFullYear()}-${Ln(e.getMonth() + 1)}-${Ln(e.getDate())}`;
 function La() {
   const e = ma(), p = Vn(), { t: u } = ta(), [, C] = D(0);
-  return Ea = e, Xn = () => p(u.readFail), an = () => p(u.saveFail), ee(() => {
+  return Ea = e, to = () => p(u.readFail), nn = () => p(u.saveFail), ee(() => {
     const o = () => C((y) => y + 1);
     return xa.add(o), xa.size === 1 && qr(), () => {
-      xa.delete(o), xa.size === 0 && (clearInterval(Jn), Ja = !1);
+      xa.delete(o), xa.size === 0 && (clearInterval(eo), Xa = !1);
     };
   }, []), {
     cfg: Ot,
-    loaded: Ja,
+    loaded: Xa,
     save: (o) => Ua({ accounts: o.accounts, spaces: o.spaces, spaceIcons: o.spaceIcons, spaceColors: o.spaceColors, focus: o.focus, schedule: o.schedule, frequency: o.frequency, about: o.about, aboutBySpace: o.aboutBySpace }),
     saveBrief: (o) => Ua({ brief: o }),
     saveTasks: (o) => Ua({ tasks: o }),
@@ -1485,21 +1503,21 @@ function La() {
     removeReminder: (o) => En((y) => y.filter((G) => G.id !== o))
   };
 }
-const Ve = "*", eo = "alba.filter", Va = /* @__PURE__ */ new Set();
-let Xa = Ve;
+const Ve = "*", ao = "alba.filter", Va = /* @__PURE__ */ new Set();
+let en = Ve;
 try {
-  Xa = localStorage.getItem(eo) ?? Ve;
+  en = localStorage.getItem(ao) ?? Ve;
 } catch {
 }
-function nn() {
+function on() {
   const [, e] = D(0);
   return ee(() => {
     const u = () => e((C) => C + 1);
     return Va.add(u), () => void Va.delete(u);
-  }, []), [Xa, (u) => {
-    Xa = u;
+  }, []), [en, (u) => {
+    en = u;
     try {
-      localStorage.setItem(eo, u);
+      localStorage.setItem(ao, u);
     } catch {
     }
     Va.forEach((C) => C());
@@ -1511,7 +1529,7 @@ const Dr = (e) => {
     ...(e.tasks ?? ((p = e.brief) == null ? void 0 : p.todos) ?? []).filter((C) => (C.status ?? "open") === "open"),
     ...((u = e.brief) == null ? void 0 : u.updates) ?? []
   ];
-}, to = (e) => Array.from(/* @__PURE__ */ new Set([...e.spaces, ...Dr(e).map((p) => p.space).filter(Boolean)])), Br = (e) => Object.values(e.accounts).reduce((p, u) => p + u.length, 0), Or = (e) => (e.replace(/@.*/, "").match(/[A-Za-z0-9]/g) ?? ["?"]).slice(0, 2).join("").toUpperCase(), Hr = `
+}, no = (e) => Array.from(/* @__PURE__ */ new Set([...e.spaces, ...Dr(e).map((p) => p.space).filter(Boolean)])), Br = (e) => Object.values(e.accounts).reduce((p, u) => p + u.length, 0), Or = (e) => (e.replace(/@.*/, "").match(/[A-Za-z0-9]/g) ?? ["?"]).slice(0, 2).join("").toUpperCase(), Hr = `
 .mb{position:relative;color:var(--text);flex:1;min-height:0;overflow:hidden;font-family:var(--font-body,inherit);display:flex;flex-direction:column}
 .mb .scroll{flex:1;min-height:0;overflow-y:auto;padding:28px 32px 14px;display:flex;flex-direction:column}
 .mb *{box-sizing:border-box}
@@ -2063,7 +2081,7 @@ function Na({ cfg: e, space: p, account: u }) {
     u ? /* @__PURE__ */ t("span", { className: "itag acc", children: u }) : null
   ] });
 }
-const ao = 864e5, Vr = (e = /* @__PURE__ */ new Date()) => `${e.getFullYear()}-${String(e.getMonth() + 1).padStart(2, "0")}-${String(e.getDate()).padStart(2, "0")}`, ia = (e, p) => Math.max(0, Math.round((Date.parse(p) - Date.parse(e.firstSeen)) / ao)), Pn = 3, qn = 7, Yr = 30;
+const oo = 864e5, Vr = (e = /* @__PURE__ */ new Date()) => `${e.getFullYear()}-${String(e.getMonth() + 1).padStart(2, "0")}-${String(e.getDate()).padStart(2, "0")}`, ia = (e, p) => Math.max(0, Math.round((Date.parse(p) - Date.parse(e.firstSeen)) / oo)), Pn = 3, qn = 7, Yr = 30;
 function Kr() {
   var he, W, It;
   const { cfg: e, loaded: p } = La(), u = ma(), [C, o] = D({});
@@ -2087,7 +2105,7 @@ function Kr() {
     u.get("/apps/alba/api/feedback").then((i) => j(Object.fromEntries(((i == null ? void 0 : i.votes) ?? []).map((B) => [B.key, B.vote])))).catch(() => {
     });
   }, []);
-  const { t: N } = ta(), { openChat: _ } = tn(), x = e.brief, [Z] = nn(), ce = to(e), K = Z === Ve || ce.includes(Z) ? Z : Ve, me = (i) => K === Ve || i.space === K, de = Vr(), we = (e.tasks ?? ((x == null ? void 0 : x.todos) ?? []).map((i, B) => ({ id: "legacy-" + B, title: i.title, body: i.body, source: i.source, space: i.space, account: i.account, firstSeen: de, status: i.done ? "done" : "open", doneAt: i.done ? de : void 0, doneBy: "user" }))).map((i) => C[i.id] ? { ...i, status: C[i.id].status, doneAt: C[i.id].doneAt, doneBy: "user" } : i), mt = (i) => me(i), pe = we.filter((i) => i.status === "open" && mt(i)), ht = pe.filter((i) => ia(i, de) < qn).sort((i, B) => ia(B, de) - ia(i, de)), be = pe.filter((i) => ia(i, de) >= qn), it = we.filter((i) => i.status === "done" && i.doneAt === de && mt(i)), Ye = we.filter((i) => i.status !== "open" && i.doneAt !== de && mt(i) && (Date.parse(de) - Date.parse(i.doneAt ?? de)) / ao <= Yr), tt = ((x == null ? void 0 : x.updates) ?? []).filter(me), Me = (i, B) => {
+  const { t: N } = ta(), { openChat: _ } = an(), x = e.brief, [Z] = on(), ce = no(e), K = Z === Ve || ce.includes(Z) ? Z : Ve, me = (i) => K === Ve || i.space === K, de = Vr(), we = (e.tasks ?? ((x == null ? void 0 : x.todos) ?? []).map((i, B) => ({ id: "legacy-" + B, title: i.title, body: i.body, source: i.source, space: i.space, account: i.account, firstSeen: de, status: i.done ? "done" : "open", doneAt: i.done ? de : void 0, doneBy: "user" }))).map((i) => C[i.id] ? { ...i, status: C[i.id].status, doneAt: C[i.id].doneAt, doneBy: "user" } : i), mt = (i) => me(i), pe = we.filter((i) => i.status === "open" && mt(i)), ht = pe.filter((i) => ia(i, de) < qn).sort((i, B) => ia(B, de) - ia(i, de)), be = pe.filter((i) => ia(i, de) >= qn), it = we.filter((i) => i.status === "done" && i.doneAt === de && mt(i)), Ye = we.filter((i) => i.status !== "open" && i.doneAt !== de && mt(i) && (Date.parse(de) - Date.parse(i.doneAt ?? de)) / oo <= Yr), tt = ((x == null ? void 0 : x.updates) ?? []).filter(me), Me = (i, B) => {
     const U = { ...i, ...B };
     o((V) => {
       const xe = { ...V };
@@ -2130,7 +2148,7 @@ function Kr() {
         return `${B % 12 || 12}:${i[2]} ${B < 12 ? "AM" : "PM"}`;
       })() }),
       (he = x.unread) != null && he.length ? /* @__PURE__ */ r("div", { className: "unreadwrap", ref: je, children: [
-        /* @__PURE__ */ t("button", { type: "button", className: "ib unreadbtn", title: N.unread, "aria-label": N.unread, onClick: () => O((i) => !i), children: /* @__PURE__ */ t(Xo, { size: 15 }) }),
+        /* @__PURE__ */ t("button", { type: "button", className: "ib unreadbtn", title: N.unread, "aria-label": N.unread, onClick: () => O((i) => !i), children: /* @__PURE__ */ t(tr, { size: 15 }) }),
         Ee ? /* @__PURE__ */ r("div", { className: "unreadpop", children: [
           /* @__PURE__ */ t("b", { children: N.unread }),
           /* @__PURE__ */ t("ul", { children: x.unread.map((i, B) => /* @__PURE__ */ t("li", { children: i }, B)) })
@@ -2237,7 +2255,7 @@ function Kr() {
         (It = x.reminders) != null && It.length ? /* @__PURE__ */ r("div", { className: "sect remind", style: { "--i": 0 }, children: [
           /* @__PURE__ */ t("div", { className: "sec", children: /* @__PURE__ */ t("h2", { children: N.remTitle }) }),
           x.reminders.map((i, B) => /* @__PURE__ */ r("div", { className: "ritem", children: [
-            /* @__PURE__ */ t(er, { size: 17 }),
+            /* @__PURE__ */ t(ar, { size: 17 }),
             /* @__PURE__ */ r("div", { children: [
               i.text,
               i.since ? /* @__PURE__ */ t("small", { children: N.remSince(i.since) }) : null
@@ -2331,8 +2349,8 @@ function Kr() {
               return /* @__PURE__ */ r("div", { className: "updfoot", children: [
                 /* @__PURE__ */ t(Na, { cfg: e, space: i.space, account: i.account }),
                 /* @__PURE__ */ r("span", { className: "votes" + (V ? " set" : ""), children: [
-                  /* @__PURE__ */ t("button", { className: "vote" + (V === 1 ? " on" : ""), title: N.voteUp, "aria-label": N.voteUp, "aria-pressed": V === 1, onClick: () => xe(1), children: /* @__PURE__ */ t(tr, { size: 14 }) }),
-                  /* @__PURE__ */ t("button", { className: "vote down" + (V === -1 ? " on" : ""), title: N.voteDown, "aria-label": N.voteDown, "aria-pressed": V === -1, onClick: () => xe(-1), children: /* @__PURE__ */ t(ar, { size: 14 }) })
+                  /* @__PURE__ */ t("button", { className: "vote" + (V === 1 ? " on" : ""), title: N.voteUp, "aria-label": N.voteUp, "aria-pressed": V === 1, onClick: () => xe(1), children: /* @__PURE__ */ t(nr, { size: 14 }) }),
+                  /* @__PURE__ */ t("button", { className: "vote down" + (V === -1 ? " on" : ""), title: N.voteDown, "aria-label": N.voteDown, "aria-pressed": V === -1, onClick: () => xe(-1), children: /* @__PURE__ */ t(or, { size: 14 }) })
                 ] })
               ] });
             })()
@@ -2381,7 +2399,7 @@ const Qr = {
   return u[e] ?? u._;
 }, Xt = ["youtrack", "jira", "confluence", "gmail", "calendar", "drive", "googlechat", "slack", "notion", "linear", "trello", "github", "outlook"], Ya = [], Jr = () => Math.random().toString(36).slice(2, 9), qe = "*";
 function Xr() {
-  const { cfg: e, save: p, saveTasks: u, saveBrief: C } = La(), { t: o, code: y, lang: G } = ta(), j = ma(), { openChat: N } = tn(), [_, x] = D({}), [Z, ce] = D(""), [K, me] = D({}), [de, rt] = D({}), [we, mt] = D({}), [pe, ht] = D(null), [be, it] = D(!1), [Ye, tt] = D({}), [Me, gt] = D({ id: "", secret: "" }), [bt, ft] = D(null), [Mt, Ft] = D(null), [oe, Ie] = D({ url: "", token: "" }), [Re, Ee] = D(!1), [O, je] = D({}), [he, W] = D(() => {
+  const { cfg: e, save: p, saveTasks: u, saveBrief: C } = La(), { t: o, code: y, lang: G } = ta(), j = ma(), { openChat: N } = an(), [_, x] = D({}), [Z, ce] = D(""), [K, me] = D({}), [de, rt] = D({}), [we, mt] = D({}), [pe, ht] = D(null), [be, it] = D(!1), [Ye, tt] = D({}), [Me, gt] = D({ id: "", secret: "" }), [bt, ft] = D(null), [Mt, Ft] = D(null), [oe, Ie] = D({ url: "", token: "" }), [Re, Ee] = D(!1), [O, je] = D({}), [he, W] = D(() => {
     try {
       return JSON.parse(localStorage.getItem("alba.expandedEmpty") || "{}");
     } catch {
@@ -2504,7 +2522,7 @@ function Xr() {
     window.dispatchEvent(new CustomEvent("alba:ask", { detail: { message: M } }));
   }, Ke = (l) => B(l, async () => {
     await Ce("refresh", { accountId: l }), await xe();
-  }), [_e, xt] = nn(), [Ct, st] = D({}), se = e.spaces.includes(_e) ? _e : e.spaces[0] ?? qe, Qe = se === qe ? e.spaces[0] ?? "" : se, Ut = (l) => l === qe ? "#64748B" : ya(e, l), Lt = ut.flatMap(({ key: l, name: k }) => (e.accounts[l] ?? []).filter((m) => {
+  }), [_e, xt] = on(), [Ct, st] = D({}), se = e.spaces.includes(_e) ? _e : e.spaces[0] ?? qe, Qe = se === qe ? e.spaces[0] ?? "" : se, Ut = (l) => l === qe ? "#64748B" : ya(e, l), Lt = ut.flatMap(({ key: l, name: k }) => (e.accounts[l] ?? []).filter((m) => {
     var M, S;
     return m.enabled && (Xt.includes(l) ? !_[m.id] : ((S = (M = e.health) == null ? void 0 : M[m.id]) == null ? void 0 : S.status) !== "ok") && (se === qe || m.space === se);
   }).map((m) => ({ key: l, name: k, a: m }))), Vt = () => {
@@ -2657,25 +2675,25 @@ function Xr() {
     })() }),
     /* @__PURE__ */ r("div", { className: "cards swap", children: [
       se !== qe ? (() => {
-        const l = se, k = Qn(e, l), m = Ut(l), M = Rt(l);
+        const l = se, k = Jn(e, l), m = Ut(l), M = Rt(l);
         return /* @__PURE__ */ r("div", { className: "card spacecfg", style: { "--c": m }, children: [
           /* @__PURE__ */ r("div", { className: "head", children: [
             /* @__PURE__ */ t("div", { className: "tile", style: { background: m, color: "#fff" }, children: /* @__PURE__ */ t(k, { size: 22 }) }),
             /* @__PURE__ */ t("input", { className: "renamein", defaultValue: l, maxLength: 40, title: o.renameSpace, "aria-label": o.renameSpace, onKeyDown: (S) => {
               S.key === "Enter" && S.target.blur();
             }, onBlur: (S) => ba(l, S.target.value) }, l),
-            M === 0 ? /* @__PURE__ */ t("button", { className: "ib", title: o.deleteSpace, "aria-label": o.deleteSpace, onClick: () => qa(l), children: /* @__PURE__ */ t(wn, { size: 15 }) }) : null
+            M === 0 ? /* @__PURE__ */ t("button", { className: "ib", title: o.deleteSpace, "aria-label": o.deleteSpace, onClick: () => qa(l), children: /* @__PURE__ */ t(Cn, { size: 15 }) }) : null
           ] }),
           /* @__PURE__ */ r("div", { className: "pgroup", children: [
             /* @__PURE__ */ r("div", { className: "iconsgrid", children: [
-              Object.entries(Yn).map(([S, d]) => {
+              Object.entries(Qn).map(([S, d]) => {
                 var re;
                 const F = (((re = e.spaceIcons) == null ? void 0 : re[l]) ?? "") === S;
                 return /* @__PURE__ */ t("button", { className: "ichip" + (F ? " on" : ""), style: F ? { background: m } : void 0, onClick: () => p({ ...e, spaceIcons: { ...e.spaceIcons ?? {}, [l]: S } }), children: /* @__PURE__ */ t(d, { size: 18 }) }, S);
               }),
               (() => {
                 var ve;
-                const S = ((ve = e.spaceIcons) == null ? void 0 : ve[l]) ?? "", d = ["Laptop", "Landmark", "Stethoscope"], F = S.startsWith("lu:") && !d.includes(S.slice(3)), re = F ? Kn(S) : null, ne = (F ? d.slice(0, 2) : d).filter((Se) => Tt(Se));
+                const S = ((ve = e.spaceIcons) == null ? void 0 : ve[l]) ?? "", d = ["Laptop", "Landmark", "Stethoscope"], F = S.startsWith("lu:") && !d.includes(S.slice(3)), re = F ? Zn(S) : null, ne = (F ? d.slice(0, 2) : d).filter((Se) => Tt(Se));
                 return /* @__PURE__ */ r(Xe, { children: [
                   ne.map((Se) => {
                     const _t = Tt(Se), Oe = S === "lu:" + Se;
@@ -2770,7 +2788,7 @@ function Xr() {
               /* @__PURE__ */ r("div", { className: "head", children: [
                 /* @__PURE__ */ t("div", { className: "tile", style: { background: re + "26", color: re }, children: /* @__PURE__ */ t(ne, { size: 22 }) }),
                 /* @__PURE__ */ r("div", { children: [
-                  /* @__PURE__ */ t("b", { children: F }),
+                  /* @__PURE__ */ t("b", { children: d === "folder" ? o.folderName : F }),
                   /* @__PURE__ */ t("span", { children: Se })
                 ] }),
                 /* @__PURE__ */ t("span", { className: "count", children: Oe.length }),
@@ -2915,7 +2933,7 @@ function Xr() {
                   (() => {
                     let z = !1, J = o.lnkSync, q = () => {
                     };
-                    return Xt.includes(d) ? (z = !!_[h.id], q = () => void Ke(h.id)) : Ya.includes(d) ? (z = !Re && (!!de[h.id] || !!_[h.id]), J = o.secVerify, q = () => void $t(h.id)) : d !== "drive" && zn(h.method) && (z = !0, J = o.stCheck, q = () => void yt(d, F, h)), /* @__PURE__ */ t("button", { className: "ib" + (O[h.id] ? " spin" : ""), title: J, "aria-label": J, disabled: !z, style: z ? void 0 : { opacity: 0.3, cursor: "default" }, onClick: q, children: /* @__PURE__ */ t(nr, { size: 14 }) });
+                    return Xt.includes(d) ? (z = !!_[h.id], q = () => void Ke(h.id)) : Ya.includes(d) ? (z = !Re && (!!de[h.id] || !!_[h.id]), J = o.secVerify, q = () => void $t(h.id)) : d !== "drive" && zn(h.method) && (z = !0, J = o.stCheck, q = () => void yt(d, F, h)), /* @__PURE__ */ t("button", { className: "ib" + (O[h.id] ? " spin" : ""), title: J, "aria-label": J, disabled: !z, style: z ? void 0 : { opacity: 0.3, cursor: "default" }, onClick: q, children: /* @__PURE__ */ t(rr, { size: 14 }) });
                   })(),
                   /* @__PURE__ */ t("button", { className: "ib" + (h.enabled && !["web", "folder", "claudecode", "kiro"].includes(d) && ["none", "bad"].includes(Ne(d, h).dot) && !O[h.id] ? " need" : ""), title: o.lnkGo, "aria-label": o.lnkGo, onClick: () => void Ht([{ key: d, name: F, a: h }]), children: /* @__PURE__ */ t(Ga, { size: 14 }) }),
                   (() => {
@@ -2944,10 +2962,10 @@ function Xr() {
                       Ze(null), Je(vt === h.id ? null : h.id);
                     }, children: /* @__PURE__ */ t(z, { size: 15 }) }) : null;
                   })() : null,
-                  /* @__PURE__ */ t("button", { className: "ib", title: h.enabled ? o.pause : o.resume, onClick: () => w(d, h.id, { enabled: !h.enabled }), children: h.enabled ? /* @__PURE__ */ t(or, { size: 15 }) : /* @__PURE__ */ t(rr, { size: 15 }) }),
+                  /* @__PURE__ */ t("button", { className: "ib", title: h.enabled ? o.pause : o.resume, onClick: () => w(d, h.id, { enabled: !h.enabled }), children: h.enabled ? /* @__PURE__ */ t(ir, { size: 15 }) : /* @__PURE__ */ t(sr, { size: 15 }) }),
                   /* @__PURE__ */ t("button", { className: "ib", title: o.remove, onClick: () => {
                     (_[h.id] || de[h.id]) && Ce("disconnect", { accountId: h.id, app: d }), H(d, h.id);
-                  }, children: /* @__PURE__ */ t(wn, { size: 15 }) })
+                  }, children: /* @__PURE__ */ t(Cn, { size: 15 }) })
                 ] })
               ] }, h.id)),
               Ya.includes(d) ? Oe.filter((h) => we[h.id]).map((h) => /* @__PURE__ */ r("div", { className: "linkform", children: [
@@ -3302,10 +3320,10 @@ function Rn(e, p, u = /* @__PURE__ */ new Date()) {
 }
 const ri = /\b(?:boh|non importa|quando vuoi|come vuoi|whenever|any ?time|no idea|doesn'?t matter|da igual|cuando quieras|peu importe|n'importe quand|egal|wann du willst|tanto faz|quando quiser)\b/i, jn = 28, ii = 28, _n = 58;
 function si({ roam: e = !1, gutter: p = !1 }) {
-  var xn, vn, yn;
-  const { cfg: u, addReminder: C, removeReminder: o } = La(), { t: y, lang: G, code: j } = ta(), { openChat: N } = tn(), _ = ma(), [x, Z] = D(!1), [ce, K] = D(!1), [me, de] = D([]), rt = I(null), [we, mt] = D(null), [pe, ht] = D(!1), [be, it] = D(!1), [Ye, tt] = D(!1), [Me, gt] = D(""), [bt, ft] = D(null), [Mt, Ft] = D(null), oe = I(null), Ie = I(null), Re = I(null), Ee = I([]), O = I(null), je = I({ x: 0, y: 0 }), he = I(1), W = I(null), It = I([]), i = I(0), B = I(0), [U, V] = D(null), xe = I(""), Ce = I(!1), De = I(null), Et = I(!1), [Ht, $t] = D(!1), aa = I(0), Fe = I({ cfg: u, t: y, open: be });
+  var vn, yn, kn;
+  const { cfg: u, addReminder: C, removeReminder: o } = La(), { t: y, lang: G, code: j } = ta(), { openChat: N } = an(), _ = ma(), [x, Z] = D(!1), [ce, K] = D(!1), [me, de] = D([]), rt = I(null), [we, mt] = D(null), [pe, ht] = D(!1), [be, it] = D(!1), [Ye, tt] = D(!1), [Me, gt] = D(""), [bt, ft] = D(null), [Mt, Ft] = D(null), oe = I(null), Ie = I(null), Re = I(null), Ee = I([]), O = I(null), je = I({ x: 0, y: 0 }), he = I(1), W = I(null), It = I([]), i = I(0), B = I(0), [U, V] = D(null), xe = I(""), Ce = I(!1), De = I(null), Et = I(!1), [Ht, $t] = D(!1), aa = I(0), Fe = I({ cfg: u, t: y, open: be });
   Fe.current = { cfg: u, t: y, open: be };
-  const Ke = (u.reminders ?? []).filter((n) => n.status === "pending"), _e = za(), xt = (u.reminders ?? []).filter((n) => n.status === "delivered" && n.deliveredAt === _e).length, Ct = ((vn = (xn = u.brief) == null ? void 0 : xn.generatedAt) == null ? void 0 : vn.slice(0, 10)) === _e ? ((yn = u.brief.reminders) == null ? void 0 : yn.length) ?? 0 : 0, st = Math.max(xt, Ct), se = I(0);
+  const Ke = (u.reminders ?? []).filter((n) => n.status === "pending"), _e = za(), xt = (u.reminders ?? []).filter((n) => n.status === "delivered" && n.deliveredAt === _e).length, Ct = ((yn = (vn = u.brief) == null ? void 0 : vn.generatedAt) == null ? void 0 : yn.slice(0, 10)) === _e ? ((kn = u.brief.reminders) == null ? void 0 : kn.length) ?? 0 : 0, st = Math.max(xt, Ct), se = I(0);
   se.current = st;
   const Qe = I(e || p);
   Qe.current = e || p;
@@ -3563,7 +3581,7 @@ function si({ roam: e = !1, gutter: p = !1 }) {
       n = setTimeout(() => {
         if (!oe.current || !oe.current.isConnected) return;
         const s = document.activeElement;
-        !(Ce.current || Fe.current.open || s && (/INPUT|TEXTAREA|SELECT/.test(s.tagName) || s.isContentEditable) || !!document.querySelector(".ppop, .dockpop")) && !Ne.current && so(), a();
+        !(Ce.current || Fe.current.open || s && (/INPUT|TEXTAREA|SELECT/.test(s.tagName) || s.isContentEditable) || !!document.querySelector(".ppop, .dockpop")) && !Ne.current && co(), a();
       }, window.__albaScene === "snail" ? 1200 : 45e3 + Math.random() * 6e4);
     };
     return a(), () => clearTimeout(n);
@@ -3611,7 +3629,7 @@ function si({ roam: e = !1, gutter: p = !1 }) {
     g.style.translate = `${n.toFixed(1)}px ${(a + b).toFixed(1)}px`, s.style.translate = `0 ${(-b).toFixed(1)}px`, g.addEventListener("animationend", () => g.remove()), s.appendChild(g), s.childElementCount > 70 && ((v = s.firstElementChild) == null || v.remove());
   }, Ca = () => {
     Ne.current = null, m(null), l(!1);
-  }, on = (n) => {
+  }, rn = (n) => {
     var f;
     if (!oe.current || !oe.current.isConnected) {
       M.current = 0;
@@ -3634,7 +3652,7 @@ function si({ roam: e = !1, gutter: p = !1 }) {
     let b = 0;
     if (a.phase === "crawl" || a.phase === "leave")
       if (a.i >= a.path.length)
-        if (a.phase === "crawl") io();
+        if (a.phase === "crawl") lo();
         else {
           Ca(), M.current = 0;
           return;
@@ -3655,10 +3673,10 @@ function si({ roam: e = !1, gutter: p = !1 }) {
           Math.hypot(L[0] - a.x, L[1] - a.y) < 22 && (ke.current.dataset.state = "bye");
         }
       }
-    a.phase !== "crawl" && a.phase !== "leave" && (Rt.current += (0 - Rt.current) * Math.min(1, s * 3)), ke.current && (ke.current.style.translate = `${(a.x - 17).toFixed(2)}px ${(a.y - 11).toFixed(2)}px`, ke.current.style.scale = yt.current < 0 ? "-1 1" : "1 1", ke.current.style.rotate = `${(Rt.current * yt.current).toFixed(1)}deg`, ke.current.style.setProperty("--st", b.toFixed(3))), M.current = requestAnimationFrame(on);
-  }, no = () => {
-    M.current || (S.current = performance.now(), M.current = requestAnimationFrame(on));
-  }, rn = (n, a, s, g = () => !0) => {
+    a.phase !== "crawl" && a.phase !== "leave" && (Rt.current += (0 - Rt.current) * Math.min(1, s * 3)), ke.current && (ke.current.style.translate = `${(a.x - 17).toFixed(2)}px ${(a.y - 11).toFixed(2)}px`, ke.current.style.scale = yt.current < 0 ? "-1 1" : "1 1", ke.current.style.rotate = `${(Rt.current * yt.current).toFixed(1)}deg`, ke.current.style.setProperty("--st", b.toFixed(3))), M.current = requestAnimationFrame(rn);
+  }, ro = () => {
+    M.current || (S.current = performance.now(), M.current = requestAnimationFrame(rn));
+  }, sn = (n, a, s, g = () => !0) => {
     let b = -1, f = -1;
     for (let E = 0; E < n.free.length; E++) n.free[E] && g(E) && (b = Math.max(b, E % n.cols), f = Math.max(f, E / n.cols | 0));
     const v = [], A = (E) => {
@@ -3669,20 +3687,20 @@ function si({ roam: e = !1, gutter: p = !1 }) {
       }
     };
     return A("r"), v.length || A("b"), v;
-  }, oo = () => {
+  }, io = () => {
     const n = ie(), a = Ne.current;
     if (!n || !a) return null;
     const { g: s, W: g, H: b } = n, f = sa(s, ot(s, a.x, a.y));
     if (!f) return null;
-    const { dist: v, prev: A } = ea(s, f), E = rn(s, g, b, (T) => v[T] >= 0);
+    const { dist: v, prev: A } = ea(s, f), E = sn(s, g, b, (T) => v[T] >= 0);
     if (!E.length) return null;
     const P = E.reduce((T, R) => v[R.c[1] * s.cols + R.c[0]] < v[T.c[1] * s.cols + T.c[0]] ? R : T), L = ca(s, la(s, A, P.c)).map((T) => pt(s, T));
     return L.push(P.out), L;
-  }, ro = () => {
+  }, so = () => {
     const n = Ne.current;
     if (!n) return;
     ke.current && (ke.current.dataset.state = "crawl");
-    const a = oo();
+    const a = io();
     if (!a) {
       ke.current && (ke.current.dataset.state = "bye"), setTimeout(Ca, 700);
       return;
@@ -3703,11 +3721,11 @@ function si({ roam: e = !1, gutter: p = !1 }) {
         }
         setTimeout(() => {
           var f;
-          a !== null && ((f = F.current) == null ? void 0 : f.token) === a && (F.current = null, Y(null)), d.current === n && ro();
+          a !== null && ((f = F.current) == null ? void 0 : f.token) === a && (F.current = null, Y(null)), d.current === n && so();
         }, 3e3);
       }
     }, 2700);
-  }, sn = () => {
+  }, ln = () => {
     const n = Ne.current;
     if (!n || !O.current || F.current || Fe.current.open || De.current || Ae.current || Oa.current || !Qe.current) return null;
     const a = ie();
@@ -3725,19 +3743,19 @@ function si({ roam: e = !1, gutter: p = !1 }) {
       return F.current = { token: fe }, Ze.current = { moving: !0, until: performance.now() + 1500 }, W.current = { path: ue, i: 0, speed: 62 }, Y("walk"), q(), { ox: A * E, oy: P, side: A, token: fe };
     }
     return null;
-  }, io = () => {
+  }, lo = () => {
     const n = Ne.current;
     if (!n) return;
     n.phase = "meet", ke.current && (ke.current.dataset.state = "look");
     const a = ++d.current;
-    let s = sn();
+    let s = ln();
     const g = performance.now(), b = setInterval(() => {
       var T;
       if (d.current !== a || !Ne.current) {
         clearInterval(b);
         return;
       }
-      if (!s && (s = sn(), !s)) {
+      if (!s && (s = ln(), !s)) {
         performance.now() - g > 2e4 && (clearInterval(b), Da(a, null));
         return;
       }
@@ -3750,11 +3768,11 @@ function si({ roam: e = !1, gutter: p = !1 }) {
         Y(null), ve(-s.side), yt.current = s.side, ke.current && (ke.current.dataset.state = "shy"), setTimeout(() => Da(a, s.token), 850);
       }
     }, 150);
-  }, so = () => {
+  }, co = () => {
     var fe;
     const n = ie();
     if (!n) return !1;
-    const { g: a, W: s, H: g } = n, b = rn(a, s, g), f = b.length ? b[Math.floor(Math.random() * b.length)] : null;
+    const { g: a, W: s, H: g } = n, b = sn(a, s, g), f = b.length ? b[Math.floor(Math.random() * b.length)] : null;
     let v = f ? f.c : null;
     for (let te = 0; te < 20 && !v; te++) {
       const X = [Math.floor(Math.random() * a.cols), Math.floor(Math.random() * a.rows)];
@@ -3773,7 +3791,7 @@ function si({ roam: e = !1, gutter: p = !1 }) {
       (!P || ye < L) && (P = X, L = ye);
     }
     const T = pt(a, v), R = f ? f.out : T, ue = [T, ...P ? ca(a, la(a, E, P)).map((te) => pt(a, te)) : []];
-    return d.current += 1, Ne.current = { x: R[0], y: R[1], path: ue, i: 0, phase: "crawl", wave: 0, trail: 0, sc: ((fe = Be()) == null ? void 0 : fe.scrollTop) ?? 0 }, yt.current = ue[0][0] >= R[0] ? 1 : -1, m(null), l(!0), ke.current && (ke.current.dataset.state = "crawl"), no(), !0;
+    return d.current += 1, Ne.current = { x: R[0], y: R[1], path: ue, i: 0, phase: "crawl", wave: 0, trail: 0, sc: ((fe = Be()) == null ? void 0 : fe.scrollTop) ?? 0 }, yt.current = ue[0][0] >= R[0] ? 1 : -1, m(null), l(!0), ke.current && (ke.current.dataset.state = "crawl"), ro(), !0;
   }, Ba = () => {
     var b;
     const n = Ge.current, a = Le();
@@ -3786,7 +3804,7 @@ function si({ roam: e = !1, gutter: p = !1 }) {
       var f;
       ((f = F.current) == null ? void 0 : f.token) === g && (Y(null), F.current = null);
     }, 1500));
-  }, lo = () => {
+  }, po = () => {
     const n = Ge.current, a = ie();
     if (!n || !a || !O.current) return !1;
     const { g: s } = a, g = sa(s, ot(s, O.current.x, O.current.y));
@@ -3800,7 +3818,7 @@ function si({ roam: e = !1, gutter: p = !1 }) {
       var T, R;
       ((T = Ge.current) == null ? void 0 : T.token) !== L || Ge.current.phase !== "tease" || ((R = F.current) == null ? void 0 : R.token) !== L || !P.length || (W.current = { path: P, i: 0, speed: 112 }, Y("walk"), q());
     }, 380), !0;
-  }, ln = (n) => {
+  }, cn = (n) => {
     var L, T;
     if (!oe.current || !oe.current.isConnected) {
       at.current = 0;
@@ -3823,7 +3841,7 @@ function si({ roam: e = !1, gutter: p = !1 }) {
       a.tx = f.x + he.current * 30, a.ty = f.y - 50, Math.hypot(a.tx - a.x, a.ty - a.y) < 24 && (a.phase = "tease", a.t0 = a.t, a.next = a.t + 1.1, Y("look"));
     else if (a.phase === "tease") {
       const ue = Math.hypot(f.x - a.tx, f.y - (a.ty + 48)) < 26;
-      (ue || a.t >= a.next) && (ue && (a.dodges += 1), a.dodges >= 3 || a.t - a.t0 > 15 ? (a.phase = "perch", a.next = a.t + 4.2, W.current = null, Y(null)) : lo() ? a.next = a.t + 3.4 : Ba());
+      (ue || a.t >= a.next) && (ue && (a.dodges += 1), a.dodges >= 3 || a.t - a.t0 > 15 ? (a.phase = "perch", a.next = a.t + 4.2, W.current = null, Y(null)) : po() ? a.next = a.t + 3.4 : Ba());
     } else if (a.phase === "perch")
       a.tx = f.x - he.current * 9, a.ty = f.y - 15, !a.landed && Math.hypot(a.tx - a.x, a.ty - a.y) < 4 && (a.landed = !0, zt.current && (zt.current.dataset.state = "perch"), jt.current && (jt.current.style.translate = `${(f.x - 20).toFixed(1)}px ${(f.y - 62).toFixed(1)}px`, jt.current.dataset.state = "on")), a.t >= a.next && Ba();
     else if (a.x < -40 || a.x > v + 40) {
@@ -3837,22 +3855,22 @@ function si({ roam: e = !1, gutter: p = !1 }) {
       a.vx += ((fe > 0.5 ? R / fe * X : 0) - a.vx) * ct, a.vy += ((fe > 0.5 ? ue / fe * X : 0) - a.vy) * ct, a.x += a.vx * g, a.y += a.vy * g;
     }
     const A = a.landed ? 0 : 1, E = Math.sin(a.t * 4.7) * 5 * A, P = (Math.sin(a.t * 9.3) * 4 + Math.sin(a.t * 2.3) * 5) * A;
-    zt.current && (zt.current.style.translate = `${(a.x + E - 12).toFixed(2)}px ${(a.y + P - 12).toFixed(2)}px`, zt.current.style.rotate = `${Math.max(-20, Math.min(20, a.vx * 0.14)).toFixed(1)}deg`), at.current = requestAnimationFrame(ln);
-  }, co = () => {
+    zt.current && (zt.current.style.translate = `${(a.x + E - 12).toFixed(2)}px ${(a.y + P - 12).toFixed(2)}px`, zt.current.style.rotate = `${Math.max(-20, Math.min(20, a.vx * 0.14)).toFixed(1)}deg`), at.current = requestAnimationFrame(cn);
+  }, uo = () => {
     var v;
     const n = Le();
     if (!n || !O.current || F.current || Ge.current) return !1;
     const a = n.clientWidth, s = n.clientHeight, g = ++re.current;
     F.current = { token: g };
     const b = O.current, f = b.x < a - 260;
-    return Ge.current = { x: f ? Math.min(a + 30, b.x + 420 + Math.random() * 160) : b.x - 380, y: Math.max(40, Math.min(s - 80, b.y - 150 - Math.random() * 130)), vx: f ? -70 : 70, vy: 20, tx: b.x, ty: b.y - 50, phase: "in", t: 0, t0: 0, next: 0, dodges: 0, landed: !1, token: g, sc: ((v = Be()) == null ? void 0 : v.scrollTop) ?? 0 }, na(Math.random() < 0.7 ? "butterfly" : "bee"), at.current || (ba.current = performance.now(), at.current = requestAnimationFrame(ln)), !0;
+    return Ge.current = { x: f ? Math.min(a + 30, b.x + 420 + Math.random() * 160) : b.x - 380, y: Math.max(40, Math.min(s - 80, b.y - 150 - Math.random() * 130)), vx: f ? -70 : 70, vy: 20, tx: b.x, ty: b.y - 50, phase: "in", t: 0, t0: 0, next: 0, dodges: 0, landed: !1, token: g, sc: ((v = Be()) == null ? void 0 : v.scrollTop) ?? 0 }, na(Math.random() < 0.7 ? "butterfly" : "bee"), at.current || (ba.current = performance.now(), at.current = requestAnimationFrame(cn)), !0;
   }, oa = () => {
     F.current = null, Je.current = null, Zt(!1);
-  }, fa = I(null), cn = () => {
+  }, fa = I(null), dn = () => {
     Pe.current && (Pe.current.dataset.state = "down"), setTimeout(() => {
       Je.current = null, Zt(!1);
     }, 480);
-  }, po = (n) => {
+  }, mo = (n) => {
     const a = () => {
       var b;
       return ((b = F.current) == null ? void 0 : b.token) === n;
@@ -3879,13 +3897,13 @@ function si({ roam: e = !1, gutter: p = !1 }) {
       return;
     }
     Y(g), s(g === "nap" ? 4600 : g === "dance" ? 2300 : g === "flap" ? 1700 : 1500);
-  }, dn = 25, uo = (n, a, s) => {
+  }, pn = 25, ho = (n, a, s) => {
     for (const g of [1, -1]) {
-      const b = n - g * dn, f = a - 20;
+      const b = n - g * pn, f = a - 20;
       if (s(b, f)) return { sx: b, sy: f, face: g };
     }
     return null;
-  }, mo = () => {
+  }, go = () => {
     var P;
     const n = ie();
     if (!n || !O.current) return !1;
@@ -3899,7 +3917,7 @@ function si({ roam: e = !1, gutter: p = !1 }) {
     for (let L = 0; L < 14 && !f; L++) {
       const T = da(a, g, Math.random, 9);
       if (!T) return !1;
-      const [R, ue] = pt(a, T), fe = R, te = ue + 18, X = uo(fe, te, b);
+      const [R, ue] = pt(a, T), fe = R, te = ue + 18, X = ho(fe, te, b);
       X && (f = { px: fe, py: te, ...X });
     }
     if (!f) return !1;
@@ -3936,25 +3954,25 @@ function si({ roam: e = !1, gutter: p = !1 }) {
         const dt = O.current, kt = ha(le), We = ((wt = Be()) == null ? void 0 : wt.scrollTop) ?? 0;
         if (We !== ct && (ct = We, At = performance.now() + 2500), te === "walk" || te === "peck") {
           if (performance.now() - ye > 45e3) {
-            clearInterval(ge), cn(), Y(null), F.current = null;
+            clearInterval(ge), dn(), Y(null), F.current = null;
             return;
           }
-          const Nt = le.x - v.face * dn, Gt = Math.max(46, Math.min(ze() - 74, kt - 20)), ra = Math.hypot(Nt - dt.x, Gt - dt.y);
+          const Nt = le.x - v.face * pn, Gt = Math.max(46, Math.min(ze() - 74, kt - 20)), ra = Math.hypot(Nt - dt.x, Gt - dt.y);
           if (Math.abs(Gt - (kt - 20)) > 10) {
             if ($ += 100, te === "peck" && (te = "walk", Y(null)), $ > 6e3) {
-              clearInterval(ge), cn(), Y(null), F.current = null;
+              clearInterval(ge), dn(), Y(null), F.current = null;
               return;
             }
             ra > 6 && (W.current ? W.current.path[W.current.path.length - 1] = [Nt, Gt] : (Ze.current = { moving: !0, until: performance.now() + 700 }, W.current = { path: [[Nt, Gt]], i: 0, speed: 90 }, q()));
             return;
           }
-          $ = 0, ra > (te === "peck" ? 7 : 4) ? (te === "peck" && Y(ra > 70 ? "run" : "walk"), te === "peck" || performance.now() < At ? (Ze.current = { moving: !0, until: performance.now() + 700 }, W.current ? (W.current.path = [[Nt, Gt]], W.current.i = 0, W.current.speed = ra > 26 ? 150 : 70) : (W.current = { path: [[Nt, Gt]], i: 0, speed: ra > 26 ? 150 : 70 }, q())) : W.current ? W.current.path[W.current.path.length - 1] = [Nt, Gt] : (Ze.current = { moving: !0, until: performance.now() + 900 }, W.current = { path: [[Nt, Gt]], i: 0, speed: ra > 70 ? 150 : 75 }, q())) : W.current || (ve(v.face), te === "walk" ? (te = "peck", Y("peck")) : (Y((kn) => kn === "peck" ? kn : "peck"), X += 100)), te === "peck" && X >= 1500 && (te = "pull", Y("pull"), Pe.current && (Pe.current.dataset.state = "pull"));
+          $ = 0, ra > (te === "peck" ? 7 : 4) ? (te === "peck" && Y(ra > 70 ? "run" : "walk"), te === "peck" || performance.now() < At ? (Ze.current = { moving: !0, until: performance.now() + 700 }, W.current ? (W.current.path = [[Nt, Gt]], W.current.i = 0, W.current.speed = ra > 26 ? 150 : 70) : (W.current = { path: [[Nt, Gt]], i: 0, speed: ra > 26 ? 150 : 70 }, q())) : W.current ? W.current.path[W.current.path.length - 1] = [Nt, Gt] : (Ze.current = { moving: !0, until: performance.now() + 900 }, W.current = { path: [[Nt, Gt]], i: 0, speed: ra > 70 ? 150 : 75 }, q())) : W.current || (ve(v.face), te === "walk" ? (te = "peck", Y("peck")) : (Y((wn) => wn === "peck" ? wn : "peck"), X += 100)), te === "peck" && X >= 1500 && (te = "pull", Y("pull"), Pe.current && (Pe.current.dataset.state = "pull"));
           return;
         }
-        X += 100, te === "pull" && X >= 2150 ? (te = "carry", le.cy0 = kt - 37, le.carry = performance.now(), Y(null), Pe.current && (Pe.current.dataset.state = "carry", Pe.current.dataset.face = String(he.current)), fa.current && (fa.current.dataset.state = "out"), q()) : te === "carry" && X >= 2650 ? (te = "swallow", Y("gulp"), Pe.current && (Pe.current.dataset.state = "swallow", Pe.current.dataset.face = String(he.current)), vt.current && (vt.current.dataset.state = "on")) : te === "swallow" && X >= 3900 && (clearInterval(ge), Je.current = null, Zt(!1), po(A));
+        X += 100, te === "pull" && X >= 2150 ? (te = "carry", le.cy0 = kt - 37, le.carry = performance.now(), Y(null), Pe.current && (Pe.current.dataset.state = "carry", Pe.current.dataset.face = String(he.current)), fa.current && (fa.current.dataset.state = "out"), q()) : te === "carry" && X >= 2650 ? (te = "swallow", Y("gulp"), Pe.current && (Pe.current.dataset.state = "swallow", Pe.current.dataset.face = String(he.current)), vt.current && (vt.current.dataset.state = "on")) : te === "swallow" && X >= 3900 && (clearInterval(ge), Je.current = null, Zt(!1), mo(A));
       }, 100);
     }, 2100), !0;
-  }, ho = (n) => {
+  }, bo = (n) => {
     var g, b;
     if (n.button !== 0 || be || !Le()) return;
     const a = /(-?[\d.]+)px\s+(-?[\d.]+)px/.exec(String(((b = (g = Ie.current) == null ? void 0 : g.style) == null ? void 0 : b.translate) ?? "")), s = lt();
@@ -3963,7 +3981,7 @@ function si({ roam: e = !1, gutter: p = !1 }) {
       n.currentTarget.setPointerCapture(n.pointerId);
     } catch {
     }
-  }, go = (n) => {
+  }, fo = (n) => {
     const a = De.current;
     if (!a || a.id !== n.pointerId) return;
     if (!a.moved) {
@@ -3972,7 +3990,7 @@ function si({ roam: e = !1, gutter: p = !1 }) {
     }
     const s = Le();
     !s || !O.current || (O.current.x = Math.max(0, Math.min(s.clientWidth, O.current.x + (n.clientX - a.lx))), O.current.y = Math.max(0, Math.min(s.clientHeight, O.current.y + (n.clientY - a.ly))), a.lx = n.clientX, a.ly = n.clientY, q());
-  }, pn = (n) => {
+  }, un = (n) => {
     const a = De.current;
     if (!(!a || a.id !== n.pointerId)) {
       De.current = null;
@@ -3982,7 +4000,7 @@ function si({ roam: e = !1, gutter: p = !1 }) {
       }
       a.moved && (Et.current = !0, $t(!1), V(null), Y("land"), setTimeout(() => Y((s) => s === "land" ? null : s), 520), setTimeout(() => {
         if (!Qe.current) {
-          un();
+          mn();
           return;
         }
         const s = ie();
@@ -3997,7 +4015,7 @@ function si({ roam: e = !1, gutter: p = !1 }) {
     const n = setInterval(() => Y("struggle"), 120);
     return () => clearInterval(n);
   }, [Ht]);
-  const un = () => {
+  const mn = () => {
     oa();
     const n = lt(), a = O.current ?? n, s = Math.hypot(n.x - a.x, n.y - a.y);
     if (s < 30) {
@@ -4021,9 +4039,9 @@ function si({ roam: e = !1, gutter: p = !1 }) {
     setTimeout(() => {
       ne.current !== P || !Ae.current || (Ae.current = !1, W.current = null, O.current = lt(), Y(null));
     }, 2600);
-  }, mn = I(!1);
+  }, hn = I(!1);
   ee(() => {
-    if (mn.current && !e && un(), mn.current = e, !e && !p) return;
+    if (hn.current && !e && mn(), hn.current = e, !e && !p) return;
     const n = window.__albaRoamMs ?? 0;
     let a, s = !0;
     const g = () => {
@@ -4032,7 +4050,7 @@ function si({ roam: e = !1, gutter: p = !1 }) {
         const A = document.activeElement;
         if (!(Ce.current || Fe.current.open || A && (/INPUT|TEXTAREA|SELECT/.test(A.tagName) || A.isContentEditable) || !!document.querySelector(".ppop, .dockpop")) && !W.current && !F.current && !Oa.current) {
           const P = window.__albaHunt, L = window.__albaScene;
-          !(e && (L === "butterfly" || !s && !L && Math.random() < 0.12) && co()) && !(e && L !== "butterfly" && L !== "snail" && (s || Math.random() < (P ?? 0.4)) && mo()) && Te(), s = !1;
+          !(e && (L === "butterfly" || !s && !L && Math.random() < 0.12) && uo()) && !(e && L !== "butterfly" && L !== "snail" && (s || Math.random() < (P ?? 0.4)) && go()) && Te(), s = !1;
         }
         g();
       }, n || (s ? 4500 : 3500 + Math.random() * 5e3));
@@ -4103,7 +4121,7 @@ function si({ roam: e = !1, gutter: p = !1 }) {
     } catch {
       return ht(!0), null;
     }
-  }, [bo, fo] = D(0), xo = async () => {
+  }, [xo, vo] = D(0), yo = async () => {
     de([{ from: "al", text: Fe.current.t.remHello }]), tt(!1);
     const n = we;
     if (n)
@@ -4123,8 +4141,8 @@ function si({ roam: e = !1, gutter: p = !1 }) {
     } catch {
       ht(!0);
     }
-    fo((a) => a + 1);
-  }, hn = (n, a) => de((s) => [...s, { from: a, text: n }]), Sa = (n) => setTimeout(() => hn(n, "al"), 120);
+    vo((a) => a + 1);
+  }, gn = (n, a) => de((s) => [...s, { from: a, text: n }]), Sa = (n) => setTimeout(() => gn(n, "al"), 120);
   ee(() => {
     be && !we && !ce && (K(!0), Ha());
   }, [be]), ee(() => {
@@ -4136,34 +4154,34 @@ function si({ roam: e = !1, gutter: p = !1 }) {
   const Ra = (n, a) => {
     const s = { id: Math.random().toString(36).slice(2, 9), text: n, createdAt: (/* @__PURE__ */ new Date()).toISOString(), status: "pending", ...a ? { due: a } : {} };
     C(s), ft(null), Sa(y.remSaved(a && a > za() ? y.remOnDay(H(a)) : y.remNextLabel));
-  }, ja = !pe, vo = /^\s*(?:cosa|che|come|quando|dove|perch[eé]|chi|quale|quali|quanto|what|how|when|where|why|who|which|qu[eé]|c[oó]mo|cu[aá]ndo|d[oó]nde|quoi|comment|pourquoi|o que|por que|was|wie|wann|wo|warum|wer)\b/i, gn = async (n) => {
+  }, ja = !pe, ko = /^\s*(?:cosa|che|come|quando|dove|perch[eé]|chi|quale|quali|quanto|what|how|when|where|why|who|which|qu[eé]|c[oó]mo|cu[aá]ndo|d[oó]nde|quoi|comment|pourquoi|o que|por que|was|wie|wann|wo|warum|wer)\b/i, bn = async (n) => {
     const a = await Ha();
     if (a && n)
       try {
         await _.post("/api/chat?ws=1", { message: n, slot: a, agent: "alba-bot", embed_app: "alba" });
       } catch {
       }
-  }, bn = I(() => {
+  }, fn = I(() => {
   });
-  bn.current = (n) => {
-    it(!0), K(!0), n.includes("[alba-login") && (tt(!0), setTimeout(() => tt(!1), 6e5)), gn(n);
+  fn.current = (n) => {
+    it(!0), K(!0), n.includes("[alba-login") && (tt(!0), setTimeout(() => tt(!1), 6e5)), bn(n);
   }, ee(() => {
     const n = (a) => {
       var g;
       const s = (g = a.detail) == null ? void 0 : g.message;
-      typeof s == "string" && s && bn.current(s);
+      typeof s == "string" && s && fn.current(s);
     };
     return window.addEventListener("alba:ask", n), () => window.removeEventListener("alba:ask", n);
   }, []);
-  const fn = () => {
+  const xn = () => {
     const n = Me.trim();
     if (!n) return;
-    if (gt(""), hn(n, "me"), bt) {
+    if (gt(""), gn(n, "me"), bt) {
       const s = Rn(n, j);
       return s.due ? Ra(bt, s.due) : ri.test(n) ? Ra(bt) : Sa(`${y.remAsk} (${y.remAskPh})`);
     }
-    if (/\?\s*$/.test(n) || vo.test(n)) {
-      Sa(y.remToChat), setTimeout(() => void gn(n), 650);
+    if (/\?\s*$/.test(n) || ko.test(n)) {
+      Sa(y.remToChat), setTimeout(() => void bn(n), 650);
       return;
     }
     const a = Rn(n, j);
@@ -4174,9 +4192,9 @@ function si({ roam: e = !1, gutter: p = !1 }) {
       /* @__PURE__ */ r("div", { className: "bhead", children: [
         /* @__PURE__ */ t("h4", { children: "Alba" }),
         /* @__PURE__ */ r("div", { style: { display: "flex", gap: 6, alignItems: "center" }, children: [
-          /* @__PURE__ */ t("button", { className: "ib", title: y.chatReset, "aria-label": y.chatReset, onClick: () => void xo(), children: /* @__PURE__ */ t(Za, { size: 14 }) }),
+          /* @__PURE__ */ t("button", { className: "ib", title: y.chatReset, "aria-label": y.chatReset, onClick: () => void yo(), children: /* @__PURE__ */ t(Za, { size: 14 }) }),
           Ke.length ? /* @__PURE__ */ r("button", { className: "talk", title: y.remPending, onClick: () => Z((n) => !n), children: [
-            /* @__PURE__ */ t(Cn, { size: 13 }),
+            /* @__PURE__ */ t(Sn, { size: 13 }),
             " ",
             Ke.length
           ] }) : null,
@@ -4188,12 +4206,12 @@ function si({ roam: e = !1, gutter: p = !1 }) {
       x && Ke.length ? /* @__PURE__ */ r("div", { className: "plist", style: { margin: "0 0 10px", paddingTop: 0, borderTop: 0 }, children: [
         /* @__PURE__ */ t("b", { children: y.remPending }),
         Ke.map((n) => /* @__PURE__ */ r("div", { className: "pitem", children: [
-          /* @__PURE__ */ t(Cn, { size: 14, style: { marginTop: 3, color: "var(--accent)" } }),
+          /* @__PURE__ */ t(Sn, { size: 14, style: { marginTop: 3, color: "var(--accent)" } }),
           /* @__PURE__ */ r("span", { children: [
             n.text,
             /* @__PURE__ */ t("em", { children: n.due && n.due > za() ? y.remOnDay(H(n.due)) : y.remNextLabel })
           ] }),
-          /* @__PURE__ */ t("button", { className: "ib", title: y.remDelete, "aria-label": y.remDelete, onClick: () => void o(n.id), children: /* @__PURE__ */ t(ir, { size: 14 }) })
+          /* @__PURE__ */ t("button", { className: "ib", title: y.remDelete, "aria-label": y.remDelete, onClick: () => void o(n.id), children: /* @__PURE__ */ t(lr, { size: 14 }) })
         ] }, n.id))
       ] }) : null,
       ja ? pe ? /* @__PURE__ */ r("div", { children: [
@@ -4212,17 +4230,17 @@ function si({ roam: e = !1, gutter: p = !1 }) {
             y.loginOpen
           ] })
         ] }) : null,
-        /* @__PURE__ */ t("div", { className: "chatbox", children: /* @__PURE__ */ t(cr, { slotKey: we, agent: "alba-bot", placeholder: y.remPlaceholder, frameless: !0, startAtBottom: !0 }, we + ":" + bo) })
+        /* @__PURE__ */ t("div", { className: "chatbox", children: /* @__PURE__ */ t(pr, { slotKey: we, agent: "alba-bot", placeholder: y.remPlaceholder, frameless: !0, startAtBottom: !0 }, we + ":" + xo) })
       ] }) : /* @__PURE__ */ t("p", { className: "ok", style: { color: "var(--muted)" }, children: "…" }) : /* @__PURE__ */ r(Xe, { children: [
         /* @__PURE__ */ t("div", { className: "msgs", ref: rt, children: me.map((n, a) => /* @__PURE__ */ t("div", { className: "msg " + n.from, children: n.text }, a)) }),
         /* @__PURE__ */ r("div", { className: "rin", children: [
-          /* @__PURE__ */ t("input", { autoFocus: !0, value: Me, onChange: (n) => gt(n.target.value), onKeyDown: (n) => n.key === "Enter" && fn(), placeholder: bt ? y.remAskPh : y.remPlaceholder }),
-          /* @__PURE__ */ t("button", { className: "ib", title: y.add, "aria-label": y.add, onClick: fn, children: /* @__PURE__ */ t(sr, { size: 16 }) })
+          /* @__PURE__ */ t("input", { autoFocus: !0, value: Me, onChange: (n) => gt(n.target.value), onKeyDown: (n) => n.key === "Enter" && xn(), placeholder: bt ? y.remAskPh : y.remPlaceholder }),
+          /* @__PURE__ */ t("button", { className: "ib", title: y.add, "aria-label": y.add, onClick: xn, children: /* @__PURE__ */ t(cr, { size: 16 }) })
         ] })
       ] })
     ] }) : null,
     U && !be ? /* @__PURE__ */ t("div", { ref: Qt, className: "teaser", role: "status", children: U }) : null,
-    /* @__PURE__ */ t("button", { ref: Ie, className: "mascot" + (U && !be ? " hop" : "") + (Pt ? " act-" + Pt : "") + (e || p ? " roaming" : "") + (Ht ? " dragging" : ""), "aria-label": "Alba", title: "Alba", onPointerDown: ho, onPointerMove: go, onPointerUp: pn, onPointerCancel: pn, onClick: () => {
+    /* @__PURE__ */ t("button", { ref: Ie, className: "mascot" + (U && !be ? " hop" : "") + (Pt ? " act-" + Pt : "") + (e || p ? " roaming" : "") + (Ht ? " dragging" : ""), "aria-label": "Alba", title: "Alba", onPointerDown: bo, onPointerMove: fo, onPointerUp: un, onPointerCancel: un, onClick: () => {
       if (Et.current) {
         Et.current = !1;
         return;
@@ -4380,7 +4398,7 @@ function hi() {
     } catch {
       return "oggi";
     }
-  }), [G, j] = nn(), [N, _] = D(!1), [x, Z] = D(!1), ce = ma(), [K, me] = D(() => Gn()), [de, rt] = D(""), [we, mt] = D(!1), pe = u.schedule ?? { time: "08:00", days: [1, 2, 3, 4, 5] }, ht = (c) => {
+  }), [G, j] = on(), [N, _] = D(!1), [x, Z] = D(!1), ce = ma(), [K, me] = D(() => Gn()), [de, rt] = D(""), [we, mt] = D(!1), pe = u.schedule ?? { time: "08:00", days: [1, 2, 3, 4, 5] }, ht = (c) => {
     try {
       return new Intl.DateTimeFormat(p, { weekday: "short" }).format(new Date(2024, 0, c));
     } catch {
@@ -4451,7 +4469,7 @@ function hi() {
     var H;
     const c = (H = It.current) == null ? void 0 : H.firstElementChild, w = Re.current;
     !c || !w || _(c.getBoundingClientRect().left < w.getBoundingClientRect().right + 16);
-  }, B = to(u), U = o === "connessioni", V = ut.filter((c) => (u.accounts[c.key] ?? []).length).length, xe = U && B.length && !B.includes(G) ? B[0] : G === Ve || B.includes(G) ? G : Ve;
+  }, B = no(u), U = o === "connessioni", V = ut.filter((c) => (u.accounts[c.key] ?? []).length).length, xe = U && B.length && !B.includes(G) ? B[0] : G === Ve || B.includes(G) ? G : Ve;
   ee(() => {
     U && B.length && !B.includes(G) && j(B[0]);
   }, [U, B.join("|"), G]);
@@ -4618,7 +4636,7 @@ function hi() {
           /* @__PURE__ */ t("span", { className: "sep" }),
           U ? null : /* @__PURE__ */ t("button", { "data-all": "1", className: "ichip" + (xe === Ve ? " on" : ""), style: { "--c": De(Ve), ...xe === Ve ? { background: De(Ve) } : {} }, "data-tip": e.all, "aria-label": e.all, onClick: () => j(Ve), children: /* @__PURE__ */ t(Fr, { size: 18 }) }),
           B.map((c, w) => {
-            const H = Qn(u, c);
+            const H = Jn(u, c);
             return /* @__PURE__ */ t(
               "button",
               {
@@ -4643,7 +4661,7 @@ function hi() {
           }),
           /* @__PURE__ */ t("div", { className: "addslot", "aria-hidden": !U, children: /* @__PURE__ */ t("button", { className: "ichip add" + (x ? " on" : ""), tabIndex: U ? 0 : -1, "data-tip": e.newSpace, "aria-label": e.newSpace, onClick: () => Z((c) => !c), children: /* @__PURE__ */ t(Ma, { size: 16 }) }) }),
           /* @__PURE__ */ t("span", { className: "sep" }),
-          /* @__PURE__ */ t("button", { className: "ichip side" + (o === "connessioni" ? " on" : ""), style: o === "connessioni" ? { background: "var(--accent)" } : void 0, "data-tip": e.connections, "aria-label": e.connections, onClick: () => Ct("connessioni"), children: /* @__PURE__ */ t(lr, { size: 16 }) })
+          /* @__PURE__ */ t("button", { className: "ichip side" + (o === "connessioni" ? " on" : ""), style: o === "connessioni" ? { background: "var(--accent)" } : void 0, "data-tip": e.connections, "aria-label": e.connections, onClick: () => Ct("connessioni"), children: /* @__PURE__ */ t(dr, { size: 16 }) })
         ] })
       ] }),
       children: [
@@ -4654,7 +4672,7 @@ function hi() {
               /* @__PURE__ */ t("b", { children: "Alba" }),
               /* @__PURE__ */ r("small", { children: [
                 "v",
-                "1.48.1"
+                "1.48.2"
               ] }),
               /* @__PURE__ */ t("span", { className: "bs", children: e.bannerSub }),
               /* @__PURE__ */ r("button", { className: "tabbtn refresh" + (K ? " spin" : ""), disabled: K, onClick: Ft, children: [

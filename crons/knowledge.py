@@ -50,12 +50,12 @@ def run(ctx):
         if push.get("title"):
             L += [f"## {push['title']}", push.get("body", ""), ""]
         for r in b.get("reminders") or []:
-            L.append(f"- Promemoria: {r.get('text', '')}" + (f" (dal {r['since']})" if r.get("since") else ""))
+            L.append(f"- Reminder: {r.get('text', '')}" + (f" (since {r['since']})" if r.get("since") else ""))
         if b.get("reminders"):
             L.append("")
         ups = b.get("updates") or []
         if ups:
-            L.append("## Novità")
+            L.append("## Updates")
             for u in ups:
                 L.append(f"- **{u.get('title', '')}** [{_src(u)}] {u.get('body', '')}" + (f" <{u['url']}>" if u.get("url") else ""))
             L.append("")
@@ -63,9 +63,9 @@ def run(ctx):
         written.append(f"brief-{day}.md")
     tasks = [t for t in (cfg.get("tasks") or []) if t.get("status") == "open"]
     if tasks:
-        L = ["---\ntitle: Alba — attività aperte\ntype: tasks\n---\n", f"# Attività aperte (aggiornato {today})", ""]
+        L = ["---\ntitle: Alba — open to-dos\ntype: tasks\n---\n", f"# Open to-dos (updated {today})", ""]
         for t in sorted(tasks, key=lambda x: x.get("firstSeen", "")):
-            L.append(f"- **{t.get('title', '')}** [{_src(t)}] dal {t.get('firstSeen', '')}. {t.get('body', '')}" + (f" <{t['url']}>" if t.get("url") else ""))
+            L.append(f"- **{t.get('title', '')}** [{_src(t)}] since {t.get('firstSeen', '')}. {t.get('body', '')}" + (f" <{t['url']}>" if t.get("url") else ""))
         _w("tasks.md", "\n".join(L))
         written.append("tasks.md")
     # decisioni dell'utente sui task (scritte dal backend): cosa chiude e cosa scarta
@@ -76,16 +76,16 @@ def run(ctx):
         st = []
     st = [x for x in st if x.get("doneAt", "") >= (_dt.date.today() - _dt.timedelta(days=30)).isoformat()]
     if st:
-        L = ["---\ntitle: Alba — attività chiuse\ntype: tasks-done\n---\n", f"# Attività chiuse o scartate negli ultimi 30 giorni (aggiornato {today})", ""]
+        L = ["---\ntitle: Alba — closed to-dos\ntype: tasks-done\n---\n", f"# To-dos closed or dismissed in the last 30 days (updated {today})", ""]
         for x in sorted(st, key=lambda x: x.get("doneAt", ""), reverse=True):
-            L.append(f"- {x.get('doneAt', '')} · {'scartata' if x.get('status') == 'dismissed' else 'completata'}: **{x.get('title', '')}** [{x.get('source', '')}]")
+            L.append(f"- {x.get('doneAt', '')} · {'dismissed' if x.get('status') == 'dismissed' else 'done'}: **{x.get('title', '')}** [{x.get('source', '')}]")
         _w("tasks-done.md", "\n".join(L))
         written.append("tasks-done.md")
     rem = [r for r in (cfg.get("reminders") or []) if r.get("status") == "pending"]
     if rem:
-        L = ["---\ntitle: Alba — promemoria in attesa\ntype: reminders\n---\n", f"# Promemoria in attesa (aggiornato {today})", ""]
+        L = ["---\ntitle: Alba — pending reminders\ntype: reminders\n---\n", f"# Pending reminders (updated {today})", ""]
         for r in rem:
-            L.append(f"- {r.get('text', '')}" + (f" — per il {r['due']}" if r.get("due") else " — nel brief del giorno dopo"))
+            L.append(f"- {r.get('text', '')}" + (f" — due {r['due']}" if r.get("due") else " — in the next day's brief"))
         _w("reminders.md", "\n".join(L))
         written.append("reminders.md")
     # archivio dei brief precedenti già in history.json, se c'è

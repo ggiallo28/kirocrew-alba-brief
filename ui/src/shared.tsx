@@ -86,7 +86,7 @@ export const APPS = [
   { key: 'jira', name: 'Jira', hint: 'Issue assegnate a me', color: '#0052CC', Icon: Layers },
   { key: 'confluence', name: 'Confluence', hint: 'Pagine che osservo', color: '#172B4D', Icon: FileText },
   { key: 'web', name: 'Web', hint: 'Notizie dal web sui tuoi temi', color: '#0EA5E9', Icon: Globe },
-  { key: 'folder', name: 'Cartella locale', hint: 'Cerca quello che scrivi nel focus', color: '#64748B', Icon: Folder },
+  { key: 'folder', name: 'Local folder', hint: 'Cerca quello che scrivi nel focus', color: '#64748B', Icon: Folder },
   { key: 'claudecode', name: 'Claude Code', hint: 'Riprendi da dove avevi lasciato', color: '#D97757', Icon: Sparkles },
   { key: 'kiro', name: 'Kiro', hint: 'Riprendi da dove avevi lasciato', color: '#6366F1', Icon: GitBranch },
 ] as const
@@ -99,7 +99,7 @@ export const ICONS: Record<string, any> = {
 }
 export const ALL_ICON = Layers
 export const PickerIcon = Pipette
-const defaultIcon = (name: string) => (/lavor|work|ufficio|office|azienda|company/i.test(name) ? 'briefcase' : /person|privat|casa|home|famil/i.test(name) ? 'user' : 'folder')
+const defaultIcon = (name: string) => (/lavor|work|ufficio|office|azienda|company|trabaj|trabalh|travail|arbeit|bureau|büro/i.test(name) ? 'briefcase' : /person|privat|casa|home|famil|pessoal|maison|zuhause/i.test(name) ? 'user' : 'folder')
 // Altre icone: il modulo lucide dell'host espone tutte le icone dal default export; le chiavi 'lu:Nome' sono quelle scelte dal selettore.
 export const EXTRA_ICONS = 'Anchor Apple Archive Atom Award Baby Backpack Banknote Beaker Beer Bird Bone Bookmark Bot Brain Bug Bus Cake Calculator Candy Carrot Cat ChefHat Church Clapperboard Clock Compass Cookie Cpu Crown Diamond Dna Dog DollarSign Drama Droplet Drum Egg Factory Feather Fish FlaskConical Flag Flame Flower Footprints Gem Gift Glasses Guitar Hammer Hand Headphones Hotel Hourglass IceCream Image Key Landmark Languages Laptop Library LifeBuoy Lock Map MapPin Medal Mic Microscope Mountain Newspaper Paintbrush Paperclip PawPrint Pen Pencil Phone PiggyBank Pill Pizza Plug Popcorn Puzzle Radio Ruler Sailboat Sandwich Scale Scissors Server Ship Shirt ShoppingBag Smile Snowflake Soup Sprout Stethoscope Store Syringe Tag Target Telescope Tent Terminal Ticket Timer Train Trees Trophy Truck Tv Umbrella Utensils Video Waves Wheat Wifi Wind Wine Zap'.split(' ')
 export const luIcon = (name: string): any => (LU as any)?.[name]
@@ -110,7 +110,8 @@ export const SPACE_COLORS = ['#F59E0B', '#8B5CF6', '#10B981', '#EC4899', '#3B82F
 export const PALETTE = ['#EF4444', '#F97316', '#F59E0B', '#EAB308', '#84CC16', '#22C55E', '#10B981', '#14B8A6', '#06B6D4', '#0EA5E9', '#3B82F6', '#6366F1', '#8B5CF6', '#A855F7', '#D946EF', '#EC4899', '#F43F5E', '#FB7185', '#FDBA74', '#A3E635', '#2DD4BF', '#7DD3FC', '#C4B5FD', '#78716C', '#94A3B8', '#64748B', '#A16207', '#0F766E', '#1E3A8A', '#E11D48', '#65A30D', '#0284C7', '#9A3412']
 export const spaceColor = (cfg: Config, name: string) => cfg.spaceColors?.[name] ?? SPACE_COLORS[Math.max(0, cfg.spaces.indexOf(name)) % SPACE_COLORS.length]
 
-const EMPTY: Config = { accounts: {}, spaces: ['Lavoro', 'Personale'] }
+// chi parte da zero trova due profili con il nome nella propria lingua, non in quella di chi ha scritto l'app
+const EMPTY: Config = { accounts: {}, spaces: (() => { try { return dict(resolveLang(crewLangCode())).defaultSpaces } catch { return ['Work', 'Personal'] } })() }
 const CONFIG_PATH = '/api/apps/alba/config'
 
 export function useLang() {
